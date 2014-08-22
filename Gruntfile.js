@@ -71,10 +71,18 @@ module.exports = function(grunt) {
 		  }
 		},
 
+		//TODO: сделать нормальную склейку файлов после генерации спрайтов
 		watch: { 
 			scripts: {
 				files: ['assets/js/src/*.js','assets/js/src/**/*.js'],
 				tasks: ['concat', 'uglify'],
+				options: {
+					spawn: false,
+				},
+			},
+			sprites:{
+				files: ['assets/images/src/*'],
+				tasks: ['spritesheet'],
 				options: {
 					spawn: false,
 				},

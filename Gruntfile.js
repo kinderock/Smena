@@ -55,6 +55,14 @@ module.exports = function(grunt) {
 		  },
 		},
 
+	  cssjoin: { //Склейка стилей
+	    join :{
+	      files: {
+	        'assets/styles/build/production.css': ['assets/styles/src/*.css'],
+	      },
+	    }
+	  },
+
 		cssmin: { //Сжатие стилей
 		  combine: {
 		    files: {
@@ -72,8 +80,8 @@ module.exports = function(grunt) {
 				},
 			},
 			css: {
-				files: ['assets/styles/src/*.less','assets/styles/src/**/*.less',],
-				tasks: ['less', 'cssmin'],
+				files: ['assets/styles/src/*.less','assets/styles/src/**/*.less','assets/styles/src/*.css'],
+				tasks: ['less', 'cssjoin' ,'cssmin'],
 				options: {
 					spawn: false,
 				},
@@ -87,9 +95,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('node-spritesheet');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-cssjoin');
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssmin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssjoin' , 'cssmin']);
 };

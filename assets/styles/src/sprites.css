@@ -1,0 +1,59 @@
+.icon {
+  background: url( '../../images/build/spritesheet.png' ) no-repeat;
+  background-size: 540px 474px;
+}
+
+.icon.ico_reward {
+  width: 295px;
+  height: 390px;
+  background-position: 0px 0px;
+}
+
+.icon.ico_partner {
+  width: 245px;
+  height: 364px;
+  background-position: -295px 0px;
+}
+
+.icon.ico_logo {
+  width: 122px;
+  height: 22px;
+  background-position: -295px -364px;
+}
+
+.icon.ico_play {
+  width: 84px;
+  height: 84px;
+  background-position: 0px -390px;
+}
+
+.icon.ico_social_vk {
+  width: 16px;
+  height: 22px;
+  background-position: -417px -364px;
+}
+
+.icon.ico_social_ok {
+  width: 14px;
+  height: 22px;
+  background-position: -433px -364px;
+}
+
+.icon.ico_social_fb {
+  width: 10px;
+  height: 22px;
+  background-position: -447px -364px;
+}
+
+
+
+@media (min--moz-device-pixel-ratio: 2),
+(-o-min-device-pixel-ratio: 2/1),
+(-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2) {
+.icon {
+  background: url( '../../images/build/spritesheet@2x.png' ) no-repeat;
+  background-size: 540px 474px;
+}
+
+}

@@ -1,0 +1,49 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.icon.ico_logo {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: -92px -398px;
+  width: 122px;
+  height: 22px;
+}
+.icon.ico_partner {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: -303px 0px;
+  width: 245px;
+  height: 364px;
+}
+.icon.ico_play {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: 0px -398px;
+  width: 84px;
+  height: 84px;
+}
+.icon.ico_reward {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: 0px 0px;
+  width: 295px;
+  height: 390px;
+}
+.icon.ico_social_fb {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: -222px -398px;
+  width: 10px;
+  height: 22px;
+}
+.icon.ico_social_ok {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: -240px -398px;
+  width: 14px;
+  height: 22px;
+}
+.icon.ico_social_vk {
+  background-image: url(../../../images/build/spritesheet.png);
+  background-position: -262px -398px;
+  width: 16px;
+  height: 22px;
+}

@@ -18,18 +18,44 @@ module.exports = function(grunt) {
 	    }
 		},
 
+		spritesheet:{ //Склейка спрайтов
+			compile: {
+				options: {
+					outputImage: 'images/build/spritesheet.png',
+					outputCss: 'styles/src/sprites.css',
+					selector: '.icon',
+          output: {
+            legacy: {
+              pixelRatio: 1,
+              outputImage: 'images/build/spritesheet.png'
+            },
+            retina: {
+              pixelRatio: 2,
+              outputImage: 'images/build/spritesheet@2x.png'
+            }
+	        },
+          resolveImageSelector: function( name, fullpath ) {
+            return name.split( "@2x" ).join( "" );
+          }
+				},
+				files: {
+					'assets': 'assets/images/src/*'
+				}
+			}
+		},
+
 		less: { //Компиляция less файлов
 		  dist: {
 		    options: {
 		      paths: ["assets/styles"]
 		    },
 		    files: {
-		      "assets/styles/build/production.css": "assets/styles/src/importer.less"
+		      "assets/styles/src/importer.css": "assets/styles/src/importer.less"
 		    }
 		  },
 		},
 
-		cssmin: {
+		cssmin: { //Сжатие стилей
 		  combine: {
 		    files: {
 		      'assets/styles/build/production.min.css': 'assets/styles/build/production.css'
@@ -37,7 +63,7 @@ module.exports = function(grunt) {
 		  }
 		},
 
-		watch: {
+		watch: { 
 			scripts: {
 				files: ['assets/js/src/*.js','assets/js/src/**/*.js'],
 				tasks: ['concat', 'uglify'],
@@ -45,7 +71,6 @@ module.exports = function(grunt) {
 					spawn: false,
 				},
 			},
-
 			css: {
 				files: ['assets/styles/src/*.less','assets/styles/src/**/*.less',],
 				tasks: ['less', 'cssmin'],
@@ -59,11 +84,12 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('node-spritesheet');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'less', 'cssmin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssmin']);
 };

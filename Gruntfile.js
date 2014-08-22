@@ -18,21 +18,37 @@ module.exports = function(grunt) {
 	    }
 		},
 
-		imagemin: { //Сжатие изображений
-			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'assets/images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'assets/images/build/'
-				}]
-			}
+		less: { //Компиляция less файлов
+		  dist: {
+		    options: {
+		      paths: ["assets/styles"]
+		    },
+		    files: {
+		      "assets/styles/build/production.css": "assets/styles/src/importer.less"
+		    }
+		  },
+		},
+
+		cssmin: {
+		  combine: {
+		    files: {
+		      'assets/styles/build/production.min.css': 'assets/styles/build/production.css'
+		    }
+		  }
 		},
 
 		watch: {
 			scripts: {
 				files: ['assets/js/src/*.js','assets/js/src/**/*.js'],
 				tasks: ['concat', 'uglify'],
+				options: {
+					spawn: false,
+				},
+			},
+
+			css: {
+				files: ['assets/styles/src/*.less','assets/styles/src/**/*.less',],
+				tasks: ['less', 'cssmin'],
 				options: {
 					spawn: false,
 				},
@@ -43,9 +59,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'imagemin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'less', 'cssmin']);
 };

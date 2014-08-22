@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  background: #f1f1f1;
+}
+html,
+body {
+  height: 100%;
+  font-size: 1em;
+}

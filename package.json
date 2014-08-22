@@ -1,0 +1,19 @@
+{
+  "name": "grunt_kit",
+  "version": "0.0.0",
+  "description": "Grunt starter kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kinderock/grunt-kit.git"
+  },
+  "author": "Artem Sotnikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinderock/grunt-kit/issues"
+  },
+  "homepage": "https://github.com/kinderock/grunt-kit"
+}

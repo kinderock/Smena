@@ -71,6 +71,14 @@ module.exports = function(grunt) {
 		  }
 		},
 
+	  haml: {
+	    dist: {
+	      files: {
+	        '*.html': 'haml/*.haml'
+	      }
+	    }
+	  },
+
 		//TODO: сделать нормальную склейку файлов после генерации спрайтов
 		watch: { 
 			scripts: {
@@ -88,11 +96,14 @@ module.exports = function(grunt) {
 				},
 			},
 			css: {
-				files: ['assets/styles/src/*.less','assets/styles/src/**/*.less','assets/styles/src/*.css'],
+				files: ['assets/styles/src/sprites.css','assets/styles/src/*','assets/styles/src/**/*.less'],
 				tasks: ['less', 'cssjoin' ,'cssmin'],
 				options: {
 					spawn: false,
 				},
+			},
+			cssjoin{
+				files: []
 			}
 		}
 
@@ -104,9 +115,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-cssjoin');
+	grunt.loadNpmTasks('grunt-contrib-haml');
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssjoin' , 'cssmin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssjoin' , 'cssmin', 'haml']);
 };

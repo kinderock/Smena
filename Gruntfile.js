@@ -128,10 +128,5 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssjoin' , 'cssmin', 'allhaml']);
-	grunt.registerTask('script', ['concat', 'uglify']);
-	grunt.registerTask('sprite', ['spritesheet']);
-	grunt.registerTask('less', ['less']);
-	grunt.registerTask('css', ['cssjoin' , 'cssmin']);
-	grunt.registerTask('allcss', ['spritesheet', 'less', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('haml', ['allhaml']);
 };

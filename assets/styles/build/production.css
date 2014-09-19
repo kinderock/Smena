@@ -1,6 +1,12 @@
 /*Custom fonts*/
 
 /*End custom fonts*/
+.fleft {
+  float: left;
+}
+.fright {
+  float: right;
+}
 * {
   margin: 0;
   padding: 0;

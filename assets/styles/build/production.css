@@ -1,65 +1,58 @@
+/*Custom fonts*/
+
+/*End custom fonts*/
 * {
   margin: 0;
   padding: 0;
+  border: 0;
   outline: 0;
-  background: #f1f1f1;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  behavior: url("../../pie/PIE.htc");
 }
 html,
 body {
   height: 100%;
-  font-size: 1em;
 }
-
-.icon {
-  background: url( '../../images/build/spritesheet.png' ) no-repeat;
-  background-size: 367px 364px;
+body {
+  line-height: 1;
 }
-
-.icon.ico_partner_2 {
-  width: 245px;
-  height: 364px;
-  background-position: 0px 0px;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-
-.icon.ico_logo {
-  width: 122px;
-  height: 22px;
-  background-position: -245px 0px;
+ul {
+  list-style: none;
 }
-
-.icon.ico_play {
-  width: 84px;
-  height: 84px;
-  background-position: -245px -22px;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-.icon.ico_social_vk {
-  width: 16px;
-  height: 22px;
-  background-position: -329px -22px;
+input,
+select {
+  vertical-align: middle;
 }
-
-.icon.ico_social_ok {
-  width: 14px;
-  height: 22px;
-  background-position: -345px -22px;
+.clear {
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
 }
-
-.icon.ico_social_fb {
-  width: 10px;
-  height: 22px;
-  background-position: -329px -44px;
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
-
-
-
-@media (min--moz-device-pixel-ratio: 2),
-(-o-min-device-pixel-ratio: 2/1),
-(-webkit-min-device-pixel-ratio: 2),
-(min-device-pixel-ratio: 2) {
-.icon {
-  background: url( '../../images/build/spritesheet@2x.png' ) no-repeat;
-  background-size: 367px 364px;
-}
-
+a:hover {
+  text-decoration: underline;
 }

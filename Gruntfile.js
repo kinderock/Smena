@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 		cssjoin: { //Склейка стилей
 			join :{
 				files: {
-					'assets/styles/build/production.css': ['assets/styles/src/*.css']
+					'assets/styles/build/production.css': ['assets/styles/src/fonts.css','assets/styles/src/sprites.css','assets/styles/src/*.css']
 				}
 			}
 		},
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssjoin' , 'cssmin', 'allhaml']);
 	grunt.registerTask('scripts', ['concat', 'uglify']);
 	grunt.registerTask('sprite', ['spritesheet']);
-	grunt.registerTask('less', ['less']);
+	grunt.registerTask('getless', ['less']);
 	grunt.registerTask('css', ['cssjoin' , 'cssmin']);
 	grunt.registerTask('allcss', ['spritesheet', 'less', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('haml', ['allhaml']);

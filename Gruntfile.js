@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+	var autoprefixer = require('autoprefixer-core');
 	grunt.initConfig({
 		concat: { //Склейка скриптов
 			dist:{
@@ -28,15 +29,15 @@ module.exports = function(grunt) {
 						legacy: {
 							pixelRatio: 1,
 							outputImage: 'images/build/spritesheet.png'
-						},
-						retina: {
-							pixelRatio: 2,
-							outputImage: 'images/build/spritesheet@2x.png'
+						// },
+						// retina: {
+						// 	pixelRatio: 2,
+						// 	outputImage: 'images/build/spritesheet@2x.png'
 						}
-					},
-					resolveImageSelector: function( name, fullpath ) {
-						return name.split( "@2x" ).join( "" );
 					}
+					// resolveImageSelector: function( name, fullpath ) {
+					// 	return name.split( "@2x" ).join( "" );
+					// }
 				},
 				files: {
 					'assets': 'assets/images/src/*'
@@ -53,6 +54,16 @@ module.exports = function(grunt) {
 					"assets/styles/src/importer.css": "assets/styles/src/importer.less"
 				}
 			},
+		},
+
+
+		postcss: {
+			options: {
+				processors: [
+					autoprefixer({ browsers: ['last 2 version'] }).postcss
+				]
+			},
+			dist: { src: 'assets/styles/src/*.css' }
 		},
 
 		cssjoin: { //Склейка стилей
@@ -101,7 +112,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['assets/styles/src/sprites.css','assets/styles/src/*','assets/styles/src/**/*.less'],
-				tasks: ['less', 'cssjoin' ,'cssmin'],
+				tasks: ['less', 'postcss', 'cssjoin' ,'cssmin'],
 				options: {
 					spawn: false,
 				}
@@ -125,13 +136,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-cssjoin');
 	grunt.loadNpmTasks('grunt-allhaml');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-postcss');
 
 
-	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'cssjoin' , 'cssmin', 'allhaml']);
+	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
 	grunt.registerTask('scripts', ['concat', 'uglify']);
 	grunt.registerTask('sprite', ['spritesheet']);
-	grunt.registerTask('getless', ['less']);
-	grunt.registerTask('css', ['cssjoin' , 'cssmin']);
+	grunt.registerTask('getless', ['less', 'postcss']);
+	grunt.registerTask('css', ['postcss', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('allcss', ['spritesheet', 'less', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('haml', ['allhaml']);
 };

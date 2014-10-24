@@ -1,23 +1,23 @@
 .icon {
   background: url( '../../images/build/spritesheet.png' ) no-repeat;
-  background-size: 180px 212px;
+  background-size: 52px 52px;
 }
 
-.icon.grunt-logo {
-  width: 180px;
-  height: 212px;
+.icon.ico-menu-gear {
+  width: 26px;
+  height: 26px;
   background-position: 0px 0px;
 }
 
-
-
-@media (min--moz-device-pixel-ratio: 2),
-(-o-min-device-pixel-ratio: 2/1),
-(-webkit-min-device-pixel-ratio: 2),
-(min-device-pixel-ratio: 2) {
-.icon {
-  background: url( '../../images/build/spritesheet@2x.png' ) no-repeat;
-  background-size: 180px 212px;
+.icon.ico-menu-refresh {
+  width: 26px;
+  height: 26px;
+  background-position: -26px 0px;
 }
 
+.icon.ico-menu-user {
+  width: 23px;
+  height: 26px;
+  background-position: 0px -26px;
 }
+

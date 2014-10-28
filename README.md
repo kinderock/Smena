@@ -1,8 +1,9 @@
 ## Как начать работу
 
 1. `git clone https://github.com/kinderock/grunt-kit.git new-project` - cкачать в папку `new-project`.
-2. `npm istall` - устанавливаем пакеты.
-3. `grunt watch` - запускаем Grunt и работаем.
+2. `cd new-project` - перейти в папку **new-project**
+3. `npm istall` - устанавливаем пакеты.
+4. `grunt watch` - запускаем Grunt и работаем.
 
 Для работы с картинками (склейка в спрайты) нужен [ImageMagic](http://www.imagemagick.org/) со всеми либами.
 

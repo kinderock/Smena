@@ -30,14 +30,14 @@ module.exports = function(grunt) {
 							pixelRatio: 1,
 							outputImage: 'images/build/spritesheet.png'
 						},
-						// retina: {
-						// 	pixelRatio: 2,
-						// 	outputImage: 'images/build/spritesheet@2x.png'
-						// }
+						retina: {
+							pixelRatio: 2,
+							outputImage: 'images/build/spritesheet@2x.png'
+						}
 					},
-					// resolveImageSelector: function( name, fullpath ) {
-					// 	return name.split( "@2x" ).join( "" );
-					// }
+					resolveImageSelector: function( name, fullpath ) {
+						return name.split( "@2x" ).join( "" );
+					}
 				},
 				files: {
 					'assets': 'assets/images/src/*'

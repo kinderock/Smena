@@ -3,11 +3,26 @@
 	%head
 		%meta{:charset => "UTF-8"}/
 		%title Default
-
+		%script{src: '//localhost:35729/livereload.js'}
 		%link{:rel => "stylesheet", :href => "assets/styles/build/production.min.css"}/
 	%body
 		.task
-			.rating.mcenter
+			%form.rating.mcenter
+				%input.rating__input{:type => "radio", name: 'rating', id: 'star_1', checked: 'checked'}/
+				%label.rating__label{:for => "star_1"}
+
+				%input.rating__input{:type => "radio", name: 'rating', id: 'star_2'}/
+				%label.rating__label{:for => "star_2"}
+
+				%input.rating__input{:type => "radio", name: 'rating', id: 'star_3'}/
+				%label.rating__label{:for => "star_3"}
+
+				%input.rating__input{:type => "radio", name: 'rating', id: 'star_4'}/
+				%label.rating__label{:for => "star_4"}
+
+				%input.rating__input{:type => "radio", name: 'rating', id: 'star_5'}/
+				%label.rating__label{:for => "star_5"}
+
 		.task
 		.task
 			.textblock
@@ -95,6 +110,28 @@
 								%a{href:"#"} http://site.com
 
 		.task
+			.message.mcenter
+				.message__count.iblock
+					.icon.ico-message
+					%sup 1
+				.message__name.iblock
+					Марьяна Васильевна
+
+				.message__info
+					.message__info__item
+						%p Заявка 13513 
+						%p
+							переведена в статус
+							%span.accept Решена
+						%p
+							%a{:href => ""} Посмотреть
+					.message__info__item
+						%p Заявка 13513 
+						%p
+							переведена в статус
+							%span.decline Отклонена
+						%p
+							%a{:href => ""} Посмотреть
 		.task
 			.menu.center.mcenter
 				%a.block.menu__item.fleft

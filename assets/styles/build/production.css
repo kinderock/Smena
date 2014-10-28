@@ -1,35 +1,46 @@
-/*Custom fonts*/
 
-/*End custom fonts*/
 .icon {
-  background: url( '../../images/build/spritesheet.png' ) no-repeat;
-  background-size: 52px 52px;
+  background: url("../../images/build/spritesheet.png") no-repeat;
+  background-size: 77px 45px;
 }
-
+.icon.ico-message {
+  width: 28px;
+  height: 19px;
+  background-position: 0px 0px;
+}
 .icon.ico-menu-gear {
   width: 26px;
   height: 26px;
-  background-position: 0px 0px;
+  background-position: 0px -19px;
 }
-
 .icon.ico-menu-refresh {
   width: 26px;
   height: 26px;
-  background-position: -26px 0px;
+  background-position: -28px 0px;
 }
-
 .icon.ico-menu-user {
   width: 23px;
   height: 26px;
-  background-position: 0px -26px;
+  background-position: -54px 0px;
 }
-
-
+.icon.ico-rating-default {
+  width: 16px;
+  height: 15px;
+  background-position: -54px -26px;
+}
+.icon.ico-rating-hover {
+  width: 16px;
+  height: 15px;
+  background-position: -28px -26px;
+}
 .fleft {
   float: left;
 }
 .fright {
   float: right;
+}
+.bcover {
+  background-size: cover;
 }
 .block {
   display: block;
@@ -94,6 +105,7 @@ a:hover {
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 10px;
+  background: #fff;
 }
 .task {
   padding: 60px 0px;
@@ -107,6 +119,47 @@ body {
 h2 {
   font-size: 1.6em;
   margin-top: 20px;
+}
+.rating {
+  width: 100px;
+  text-align: center;
+}
+.rating:before,
+.rating:after {
+  content: " ";
+  display: table;
+}
+.rating:after {
+  clear: both;
+}
+.rating__label {
+  background: url("../../images/build/spritesheet.png") no-repeat;
+  background-size: 77px 45px;
+  background-position: -28px -26px;
+  cursor: pointer;
+  padding: 0 2px;
+  width: 16px;
+  height: 15px;
+  float: left;
+  display: block;
+}
+.rating__input {
+  display: none;
+}
+.rating__input:checked ~ .rating__label {
+  background-position: -54px -26px;
+}
+.rating__input:checked + .rating__label {
+  background-position: -28px -26px;
+}
+.rating:hover .rating__label {
+  background-position: -28px -26px;
+}
+.rating__label:hover {
+  background-position: -28px -26px !important;
+}
+.rating__label:hover ~ .rating__label {
+  background-position: -54px -26px !important;
 }
 .textblock {
   border-top: 2px solid #f2f2f2;
@@ -161,9 +214,93 @@ h2 {
   -webkit-column-count: 3;
      -moz-column-count: 3;
           column-count: 3;
-  -webkit-column-gap: 160px;
-     -moz-column-gap: 160px;
-          column-gap: 160px;
+  -webkit-column-gap: 140px;
+     -moz-column-gap: 140px;
+          column-gap: 140px;
+}
+.message {
+  position: relative;
+  width: 210px;
+  height: 230px;
+}
+.message > .iblock {
+  vertical-align: middle;
+}
+.message__count {
+  position: relative;
+  margin-right: 20px;
+}
+.message__count sup {
+  background: #ff3e2c;
+  color: #fff;
+  text-align: center;
+  border: 2px solid #fff;
+  font-size: 1.4em;
+  line-height: 20px;
+  position: absolute;
+  top: -12px;
+  right: -15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 360px;
+  behavior: url("../../pie/PIE.htc");
+}
+.message__name {
+  color: #0262a0;
+  font-size: 1.5em;
+  line-height: 20px;
+}
+.message__info {
+  background: #fff;
+  border: 3px solid #bad3db;
+  width: 240px;
+  padding: 20px;
+  z-index: 99;
+  position: absolute;
+  top: 40px;
+  left: -52px;
+}
+.message__info::before {
+  content: '';
+  background: #fff;
+  border-top: 3px solid #bad3db;
+  border-left: 3px solid #bad3db;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  top: -11px;
+  left: 55px;
+  width: 15px;
+  height: 15px;
+}
+.message__info__item {
+  border-top: 2px solid #c6c7c7;
+  padding-top: 15px;
+  margin-top: 15px;
+  font-size: 1.3em;
+  line-height: 1em;
+}
+.message__info__item:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.message__info__item .accept {
+  color: #00b5b7;
+}
+.message__info__item .decline {
+  color: #ff4e00;
+}
+.message__info__item p {
+  margin-bottom: 5px;
+}
+.message__info__item a {
+  color: #0262a0;
+  text-decoration: underline;
+}
+.message__info__item a:hover {
+  text-decoration: none;
 }
 .menu {
   width: 990px;
@@ -185,7 +322,6 @@ h2 {
   padding: 15px 0;
   font-size: 2em;
   line-height: 2em;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 .menu__item::before {

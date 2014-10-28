@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <title>Default</title>
+    <script src="//localhost:35729/livereload.js"></script>
     <link href="assets/styles/build/production.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="task">
-      <div class="rating mcenter"></div>
+      <form class="rating mcenter">
+        <input checked="checked" class="rating__input" id="star_1" name="rating" type="radio">
+        <label class="rating__label" for="star_1"></label>
+        <input class="rating__input" id="star_2" name="rating" type="radio">
+        <label class="rating__label" for="star_2"></label>
+        <input class="rating__input" id="star_3" name="rating" type="radio">
+        <label class="rating__label" for="star_3"></label>
+        <input class="rating__input" id="star_4" name="rating" type="radio">
+        <label class="rating__label" for="star_4"></label>
+        <input class="rating__input" id="star_5" name="rating" type="radio">
+        <label class="rating__label" for="star_5"></label>
+      </form>
     </div>
     <div class="task"></div>
     <div class="task">
@@ -123,7 +135,39 @@
         </div>
       </div>
     </div>
-    <div class="task"></div>
+    <div class="task">
+      <div class="message mcenter">
+        <div class="message__count iblock">
+          <div class="icon ico-message"></div>
+          <sup>1</sup>
+        </div>
+        <div class="message__name iblock">
+          Марьяна Васильевна
+        </div>
+        <div class="message__info">
+          <div class="message__info__item">
+            <p>Заявка 13513</p>
+            <p>
+              переведена в статус
+              <span class="accept">Решена</span>
+            </p>
+            <p>
+              <a href="">Посмотреть</a>
+            </p>
+          </div>
+          <div class="message__info__item">
+            <p>Заявка 13513</p>
+            <p>
+              переведена в статус
+              <span class="decline">Отклонена</span>
+            </p>
+            <p>
+              <a href="">Посмотреть</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="task">
       <div class="menu center mcenter">
         <a class="block menu__item fleft">

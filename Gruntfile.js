@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 	var autoprefixer = require('autoprefixer-core');
 	grunt.initConfig({
-		concat: { //Склейка скриптов
+		concat: {
 			dist:{
 				src:[
 					'assets/js/src/vendor/jquery-*.js',
@@ -12,29 +12,29 @@ module.exports = function(grunt) {
 			}
 		},
 
-		uglify: { //Сжатие скриптов
+		uglify: {
 			build: {
 				src: 'assets/js/build/production.js',
 				dest: 'assets/js/build/production.min.js'
 			}
 		},
 
-		spritesheet:{ //Склейка спрайтов
+		spritesheet:{
 			compile: {
 				options: {
 					outputImage: 'images/build/spritesheet.png',
-					outputCss: 'styles/src/sprites.css',
+					outputCss: 'styles/src/sprites.less',
 					selector: '.icon',
 					output: {
 						legacy: {
 							pixelRatio: 1,
 							outputImage: 'images/build/spritesheet.png'
-						// },
+						},
 						// retina: {
 						// 	pixelRatio: 2,
 						// 	outputImage: 'images/build/spritesheet@2x.png'
-						}
-					}
+						// }
+					},
 					// resolveImageSelector: function( name, fullpath ) {
 					// 	return name.split( "@2x" ).join( "" );
 					// }
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		less: { //Компиляция less файлов
+		less: {
 			dist: {
 				options: {
 					paths: ["assets/styles"]
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 			dist: { src: 'assets/styles/src/*.css' }
 		},
 
-		cssjoin: { //Склейка стилей
+		cssjoin: {
 			join :{
 				files: {
 					'assets/styles/build/production.css': ['assets/styles/src/fonts.css','assets/styles/src/sprites.css','assets/styles/src/*.css']
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		cssmin: { //Сжатие стилей
+		cssmin: {
 			combine: {
 				files: {
 					'assets/styles/build/production.min.css': 'assets/styles/build/production.css'
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 			}
 		},
 	
-		allhaml: { //Сборка  haml шаблонов
+		allhaml: {
 			options: {
 				inDir: 'haml',
 				outDir: '',
@@ -94,8 +94,10 @@ module.exports = function(grunt) {
 			}
 		},
 
-		//TODO: сделать нормальную склейку файлов после генерации спрайтов
 		watch: { 
+	    options: {
+	      livereload: true,
+	    },
 			scripts: {
 				files: ['assets/js/src/*.js','assets/js/src/**/*.js'],
 				tasks: ['concat', 'uglify'],
@@ -125,7 +127,6 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -137,7 +138,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-allhaml');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-postcss');
-
 
 	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
 	grunt.registerTask('scripts', ['concat', 'uglify']);

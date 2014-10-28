@@ -11,20 +11,10 @@
 
 //rouders
 .rounded(@radius: 2px) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
   border-radius: @radius;
   behavior: url('/assets/pie/PIE.htc');
 }
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
-  -webkit-border-top-right-radius: @topright;
-  -webkit-border-bottom-right-radius: @bottomright;
-  -webkit-border-bottom-left-radius: @bottomleft;
-  -webkit-border-top-left-radius: @topleft;
-  -moz-border-radius-topright: @topright;
-  -moz-border-radius-bottomright: @bottomright;
-  -moz-border-radius-bottomleft: @bottomleft;
-  -moz-border-radius-topleft: @topleft;
   border-top-right-radius: @topright;
   border-bottom-right-radius: @bottomright;
   border-bottom-left-radius: @bottomleft;
@@ -33,14 +23,9 @@
 
 //boxing & shadows
 .box-sizing(@sizing: border-box) {
-  -ms-box-sizing: @sizing;
-  -moz-box-sizing: @sizing;
-  -webkit-box-sizing: @sizing;
   box-sizing: @sizing;
 }
 .box-shadow(@arguments) {
-  -webkit-box-shadow: @arguments;
-  -moz-box-shadow: @arguments;
   box-shadow: @arguments;
 }
 
@@ -101,11 +86,9 @@
 
 //background
 .bsize(@bwidth: 50%, @bheight: auto){
-  -webkit-background-size: @bwidth @bheight;
   background-size: @bwidth @bheight;
 }
-.bcover(){
-  -webkit-background-size: cover;
+.bcover{
   background-size: cover;
 }
 

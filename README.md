@@ -1,7 +1,7 @@
 ## Как начать работу
 
 1. `git clone hhttps://github.com/kinderock/grunt-kit.git new-project` - cкачать в папку `new-project`.
-2. `npm i` - устанавливаем пакеты.
+2. `npm istall` - устанавливаем пакеты.
 3. `grunt watch` - запускаем Grunt и работаем.
 
 

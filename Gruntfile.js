@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 	var autoprefixer = require('autoprefixer-core');
   require('load-grunt-tasks')(grunt);
+  grunt.loadNpmTasks("node-spritesheet");
 
 	grunt.initConfig({
 		coffee:{
@@ -29,6 +30,17 @@ module.exports = function(grunt) {
 			build: {
 				src: '<%= concat.main.dest %>',
 				dest: 'assets/js/build/production.min.js'
+			}
+		},
+
+		imagemin: {
+			compress: {
+				files: [{
+					expand: true,
+					cwd: 'assets/images/src/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'assets/images/src/'
+				}]
 			}
 		},
 
@@ -120,7 +132,7 @@ module.exports = function(grunt) {
 			},
 			sprites:{
 				files: ['assets/images/src/*'],
-				tasks: ['spritesheet'],
+				tasks: ['imagemin', 'spritesheet'],
 				options: {
 					spawn: false,
 				}
@@ -140,6 +152,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		connect: {
 			options: {
         port: 3000,
@@ -155,12 +168,12 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
+	grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'imagemin', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
 	grunt.registerTask('scripts', ['coffee', 'concat', 'uglify']);
-	grunt.registerTask('sprite', ['spritesheet']);
+	grunt.registerTask('sprite', ['imagemin', 'spritesheet']);
 	grunt.registerTask('getless', ['less', 'postcss']);
 	grunt.registerTask('css', ['postcss', 'cssjoin' , 'cssmin']);
-	grunt.registerTask('allcss', ['spritesheet', 'less', 'cssjoin' , 'cssmin']);
+	grunt.registerTask('allcss', ['imagemin', 'spritesheet', 'less', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('haml', ['allhaml']);
 
 	grunt.registerTask('start', ['connect:livereload', 'watch']);

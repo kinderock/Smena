@@ -3,8 +3,19 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
+		coffee:{
+			compile :{
+				expand: true,
+				flatten: true,
+				cwd: 'assets/js/src/coffee',
+				src: ['*.coffee'],
+				dest: 'assets/js/src/',
+				ext: '.js'
+			}
+		},
+
 		concat: {
-			dist:{
+			main:{
 				src:[
 					'assets/js/src/vendor/jquery-*.js',
 					'assets/js/src/vendor/*.js',
@@ -16,7 +27,7 @@ module.exports = function(grunt) {
 
 		uglify: {
 			build: {
-				src: 'assets/js/build/production.js',
+				src: '<%= concat.main.dest %>',
 				dest: 'assets/js/build/production.min.js'
 			}
 		},
@@ -101,8 +112,8 @@ module.exports = function(grunt) {
 	      livereload: true,
 	    },
 			scripts: {
-				files: ['assets/js/src/*.js','assets/js/src/**/*.js'],
-				tasks: ['concat', 'uglify'],
+				files: ['assets/js/src/*.js','assets/js/src/**/*.js','assets/js/src/**/*.coffee'],
+				tasks: ['coffee', 'concat', 'uglify'],
 				options: {
 					spawn: false,
 				}
@@ -144,8 +155,8 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
-	grunt.registerTask('scripts', ['concat', 'uglify']);
+	grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
+	grunt.registerTask('scripts', ['coffee', 'concat', 'uglify']);
 	grunt.registerTask('sprite', ['spritesheet']);
 	grunt.registerTask('getless', ['less', 'postcss']);
 	grunt.registerTask('css', ['postcss', 'cssjoin' , 'cssmin']);

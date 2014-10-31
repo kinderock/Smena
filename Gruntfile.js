@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 	var autoprefixer = require('autoprefixer-core');
+  require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
 		concat: {
 			dist:{
@@ -141,17 +143,6 @@ module.exports = function(grunt) {
       },
 		}
 	});
-
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('node-spritesheet');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-cssjoin');
-	grunt.loadNpmTasks('grunt-allhaml');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
 	grunt.registerTask('scripts', ['concat', 'uglify']);

@@ -21,6 +21,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-cssjoin": "^0.3.0",
     "grunt-postcss": "^0.1.0",
+    "load-grunt-tasks": "^1.0.0",
     "node-spritesheet": "^0.4.2"
   },
   "repository": {

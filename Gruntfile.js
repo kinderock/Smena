@@ -126,6 +126,19 @@ module.exports = function(grunt) {
 					spawn: false,
 				}
 			}
+		},
+		connect: {
+			options: {
+        port: 3000,
+        livereload: 35729,
+        hostname: '0.0.0.0'
+			},
+      livereload: {
+        options: {
+          livereload: true,
+          base: '.',
+        },
+      },
 		}
 	});
 
@@ -138,6 +151,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-allhaml');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	grunt.registerTask('default', ['concat', 'uglify', 'spritesheet', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
 	grunt.registerTask('scripts', ['concat', 'uglify']);
@@ -146,4 +160,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('css', ['postcss', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('allcss', ['spritesheet', 'less', 'cssjoin' , 'cssmin']);
 	grunt.registerTask('haml', ['allhaml']);
+
+	grunt.registerTask('start', ['connect:livereload', 'watch']);
 };

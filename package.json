@@ -1,0 +1,26 @@
+{
+  "name": "smena",
+  "version": "0.0.1",
+  "description": "Hipsta-site",
+  "main": "Gruntfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gmsmith": "^0.5.0",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-bower-concat": "^0.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinderock/Smena.git"
+  },
+  "author": "Sotnikov Artem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinderock/Smena/issues"
+  },
+  "homepage": "https://github.com/kinderock/Smena#readme"
+}

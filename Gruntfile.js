@@ -3,190 +3,186 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
-	coffee:{
-		compile :{
-		expand: true,
-		flatten: true,
-		cwd: 'assets/js/src/coffee',
-		src: ['*.coffee'],
-		dest: 'assets/js/src/',
-		ext: '.js'
-		}
-	},
-
-	bower_concat: {
-		js: {
-			dest: 'assets/js/src/vendor/bower.js',
-		},
-		css: {
-			cssDest: 'assets/styles/src/bower.css',
-		}
-	},
-
-	concat: {
-		main:{
-		src:[
-			'assets/js/src/vendor/jquery-*.js',
-			'assets/js/src/vendor/*.js',
-			'assets/js/src/*.js'
-		],
-		dest: 'assets/js/build/production.js'
-		}
-	},
-
-	uglify: {
-		build: {
-			src: '<%= concat.main.dest %>',
-			dest: 'assets/js/build/production.min.js'
-		}
-	},
-
-	//  // imagemin: {
-	//  //   compress: {
-	//  //     files: [{
-	//  //       expand: true,
-	//  //       cwd: 'assets/images/src/',
-	//  //       src: ['**/*.{png,jpg,gif}'],
-	//  //       dest: 'assets/images/src/'
-	//  //     }]
-	//  //   }
-	//  // },
-
-	//  sprite:{
-	//    all: {
-	//      src: 'assets/images/src/*.png',
-	//      destImg: 'assets/images/build/sprite.png',
-	//      destCSS: 'assets/styles/src/sprites.styl',
-	//      algorithmOpts: {sort: false},
-	//      padding: 10,
-	//      engine: 'gmsmith',
-	//      cssFormat: 'stylus'
-	//      // options: {
-	//      //   outputImage: 'images/build/sprite.png',
-	//      //   outputCss: 'styles/src/sprites.less',
-	//      //   selector: '.icon',
-	//      //   // output: {
-	//      //   //   legacy: {
-	//      //   //     pixelRatio: 1,
-	//      //   //     outputImage: 'images/build/sprite.png'
-	//      //   //   },
-	//      //   //   retina: {
-	//      //   //     pixelRatio: 2,
-	//      //   //     outputImage: 'images/build/sprite@2x.png'
-	//      //   //   }
-	//      //   // },
-	//      //   // resolveImageSelector: function( name, fullpath ) {
-	//      //   //   return name.split( "@2x" ).join( "" );
-	//      //   // }
-	//      // },
-	//      // files: {
-	//      //   'assets': 'assets/images/src/*'
-	//      // }
-	//    }
-	//  },
-
-	stylus: {
-		options: {
-			compress: false
-		},
-		compile: {
-			files: {
-				'assets/styles/src/common.css': 'assets/styles/src/common.styl'
+		coffee:{
+			compile :{
+			expand: true,
+			flatten: true,
+			cwd: 'app/assets/js/src/coffee',
+			src: ['*.coffee'],
+			dest: 'app/assets/js/src/',
+			ext: '.js'
 			}
-		}
-	},
-
-	postcss: {
-		options: {
-			processors: [
-				autoprefixer({ browsers: ['last 2 version'] }).postcss
-			]
 		},
-		dist: { src: 'assets/styles/src/*.css' }
-	},
 
-	concat_css: {
-		all: {
-			src: ['assets/styles/src/fonts.css', 'assets/styles/src/_bower.css', 'assets/styles/src/sprites.css', 'assets/styles/src/*.css'],
-			dest: "assets/styles/build/production.css"
-		}
-	},
-
-	cssmin: {
-		combine: {
-			files: {
-				'assets/styles/build/production.min.css': 'assets/styles/build/production.css'
+		bower_concat: {
+			js: {
+				dest: 'app/assets/js/src/vendor/bower.js',
+			},
+			css: {
+				cssDest: 'app/assets/styles/src/_bower.css',
 			}
+		},
+
+		concat: {
+			main:{
+			src:[
+				'app/assets/js/src/vendor/jquery-*.js',
+				'app/assets/js/src/vendor/*.js',
+				'app/assets/js/src/*.js'
+			],
+			dest: 'app/assets/js/build/production.js'
+			}
+		},
+
+		uglify: {
+			build: {
+				src: '<%= concat.main.dest %>',
+				dest: 'app/assets/js/build/production.min.js'
+			}
+		},
+
+		imagemin: {
+			sprite: {
+				files: [{
+					expand: true,
+					cwd: 'app/assets/images/src/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'app/assets/images/src/'
+				}]
+			},
+			build: {
+				files: [{
+					expand: true,
+					cwd: 'app/assets/images/build/**/*',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'app/assets/images/build/'
+				}]
+			}
+		},
+
+		sprite:{
+			css: {
+				src: 'app/assets/images/src/*.png',
+				dest: 'app/assets/images/build/sprite.png',
+				padding: 10,
+				destCss: 'app/assets/styles/src/_sprites.css',
+				engine: 'gmsmith',
+				cssFormat: 'css'
+			},
+			styl: {
+				src: 'app/assets/images/src/*.png',
+				dest: 'app/assets/images/build/sprite.png',
+				padding: 10,
+				destCss: 'app/assets/styles/src/_sprites.styl',
+				engine: 'gmsmith',
+				cssFormat: 'stylus'
+			}
+		},
+
+		stylus: {
+			options: {
+				compress: false
+			},
+			compile: {
+				files: {
+					'app/assets/styles/src/common.css': 'app/assets/styles/src/common.styl'
+				}
+			}
+		},
+
+		postcss: {
+			options: {
+				processors: [
+					autoprefixer({ browsers: ['last 2 version'] }).postcss
+				]
+			},
+			dist: { src: 'app/assets/styles/src/*.css' }
+		},
+
+		concat_css: {
+			all: {
+				src: ['assets/styles/src/_*', 'app/assets/styles/src/*.css'],
+				dest: "app/assets/styles/build/production.css"
+			}
+		},
+
+		cssmin: {
+			combine: {
+				files: {
+					'app/assets/styles/build/production.min.css': 'app/assets/styles/build/production.css'
+				}
+			}
+		},
+
+		jade: {
+			compile: {
+				options: {
+					client: false,
+					pretty: true
+				},
+				files: [{
+					cwd: "app/jade",
+					src: "*.jade",
+					dest: "app/",
+					expand: true,
+					ext: ".html"
+				}]
+			}
+		},
+
+		watch: { 
+			options: {
+				livereload: true,
+			},
+			scripts: {
+				files: ['app/assets/js/src/*.js','app/assets/js/src/**/*.js','app/assets/js/src/**/*.coffee','bower_components/**/*'],
+				tasks: ['coffee', 'bower_concat:js', 'concat', 'uglify'],
+				options: {
+					spawn: false,
+				}
+			},
+			sprites:{
+				files: ['app/assets/images/src/*', 'app/assets/images/build/**/*'],
+				tasks: ['imagemin', 'sprite'],
+				options: {
+					spawn: false,
+				}
+			},
+			css: {
+				files: ['app/assets/styles/src/sprites.css','app/assets/styles/src/*','app/assets/styles/src/**/*.less','bower_components/**/*'],
+				tasks: ['bower_concat:css', 'stylus', 'postcss', 'concat_css' , 'cssmin'],
+				options: {
+					spawn: false,
+				}
+			},
+			html: {
+				files: ['app/jade/**/*.jade'],
+				tasks: ['jade'],
+				options: {
+					spawn: false,
+				}
+			}
+		},
+
+		connect: {
+			options: {
+				port: 3000,
+				livereload: 35729,
+				hostname: '0.0.0.0'
+			},
+			livereload: {
+				options: {
+					livereload: true,
+					base: '.',
+				},
+			},
 		}
-	},
-	
-	//  allhaml: {
-	//    options: {
-	//      inDir: 'haml',
-	//      outDir: '',
-	//      ouEx: 'html'
-	//    },
-	//    dist: {
-	//      src: ['<%= allhaml.options.inDir %>/**/*.haml'],
-	//      dest: '<%= allhaml.options.outDir %>'
-	//    }
-	//  },
-
-	//  watch: { 
-	//    options: {
-	//      livereload: true,
-	//    },
-	//    scripts: {
-	//      files: ['assets/js/src/*.js','assets/js/src/**/*.js','assets/js/src/**/*.coffee'],
-	//      tasks: ['coffee', 'concat', 'uglify'],
-	//      options: {
-	//        spawn: false,
-	//      }
-	//    },
-	//    sprites:{
-	//      files: ['assets/images/src/*'],
-	//      tasks: ['sprite'],
-	//      options: {
-	//        spawn: false,
-	//      }
-	//    },
-	//    css: {
-	//      files: ['assets/styles/src/sprites.css','assets/styles/src/*','assets/styles/src/**/*.less'],
-	//      tasks: ['less', 'postcss', 'cssjoin' ,'cssmin'],
-	//      options: {
-	//        spawn: false,
-	//      }
-	//    },
-	//    haml: {
-	//      files: ['haml/**/*.haml'],
-	//      tasks: ['allhaml'],
-	//      options: {
-	//        spawn: false,
-	//      }
-	//    }
-	//  },
-
-	//  connect: {
-	//    options: {
-	//      port: 3000,
-	//      livereload: 35729,
-	//      hostname: '0.0.0.0'
-	//    },
-	//    livereload: {
-	//      options: {
-	//        livereload: true,
-	//        base: '.',
-	//      },
-	//    },
-	//  }
 	});
 
-	// grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'sprite', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
-	grunt.registerTask('default', ['coffee', 'bower_concat:js', 'concat', 'uglify']);
-	grunt.registerTask('scripts', ['coffee', 'bower_concat', 'concat', 'uglify']);
-	// grunt.registerTask('img', ['sprite']);
+	grunt.registerTask('default', ['coffee', 'bower_concat:js', 'concat', 'uglify', 'bower_concat:css', 'stylus', 'postcss', 'imagemin', 'sprite', 'concat_css' , 'cssmin', 'jade']);
+	grunt.registerTask('scripts', ['coffee', 'bower_concat:js', 'concat', 'uglify']);
 	grunt.registerTask('css', ['bower_concat:css', 'stylus', 'postcss', 'concat_css' , 'cssmin']);
-	// grunt.registerTask('haml', ['allhaml']);
+	grunt.registerTask('img', ['imagemin', 'sprite']);
 
-	// grunt.registerTask('start', ['connect:livereload', 'watch']);
+	grunt.registerTask('start', ['connect:livereload', 'watch']);
 };

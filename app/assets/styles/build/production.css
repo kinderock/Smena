@@ -1,41 +1,3 @@
-
-/*
-Icon classes can be used entirely standalone. They are named after their original file names.
-
-```html
-<i class="icon-home"></i>
-```
-*/
-.icon-ico-menu-refresh {
-  background-image: url(../../images/build/sprite.png);
-  background-position: 0px 0px;
-  width: 52px;
-  height: 52px;
-}
-.icon-ico-menu-user {
-  background-image: url(../../images/build/sprite.png);
-  background-position: -62px 0px;
-  width: 46px;
-  height: 52px;
-}
-.icon-ico-message {
-  background-image: url(../../images/build/sprite.png);
-  background-position: 0px -62px;
-  width: 56px;
-  height: 38px;
-}
-.icon-ico-rating-default {
-  background-image: url(../../images/build/sprite.png);
-  background-position: -66px -62px;
-  width: 32px;
-  height: 30px;
-}
-.icon-ico-rating-hover {
-  background-image: url(../../images/build/sprite.png);
-  background-position: -118px 0px;
-  width: 32px;
-  height: 30px;
-}
 meta.foundation-version {
   font-family: "/5.5.2/"; }
 
@@ -6293,45 +6255,56 @@ th.hide-for-touch {
 @media not print {
   .show-for-print {
     display: none !important; } }
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
 .icon-mashina_090001 {
-  background-image: url("../../images/build/sprite.png");
+  background-image: url(../../images/build/sprite.png);
   background-position: 0px 0px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090007 {
-  background-image: url("../../images/build/sprite.png");
-  background-position: 0px -264px;
+  background-image: url(../../images/build/sprite.png);
+  background-position: -395px 0px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090013 {
-  background-image: url("../../images/build/sprite.png");
-  background-position: 0px -528px;
+  background-image: url(../../images/build/sprite.png);
+  background-position: 0px -274px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090019 {
-  background-image: url("../../images/build/sprite.png");
-  background-position: 0px -792px;
+  background-image: url(../../images/build/sprite.png);
+  background-position: -395px -274px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090025 {
-  background-image: url("../../images/build/sprite.png");
-  background-position: 0px -1056px;
+  background-image: url(../../images/build/sprite.png);
+  background-position: -790px 0px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090031 {
-  background-image: url("../../images/build/sprite.png");
-  background-position: 0px -1320px;
+  background-image: url(../../images/build/sprite.png);
+  background-position: -790px -274px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090037 {
-  background-image: url("../../images/build/sprite.png");
-  background-position: 0px -1584px;
+  background-image: url(../../images/build/sprite.png);
+  background-position: 0px -548px;
   width: 385px;
   height: 264px;
 }
@@ -6353,3 +6326,4 @@ h2 {
   font-size: 1.6em;
   margin-top: 20px;
 }
+

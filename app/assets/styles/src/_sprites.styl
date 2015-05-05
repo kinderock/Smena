@@ -1,0 +1,147 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$mashina_090001_name = 'mashina_090001';
+$mashina_090001_x = 0px;
+$mashina_090001_y = 0px;
+$mashina_090001_offset_x = 0px;
+$mashina_090001_offset_y = 0px;
+$mashina_090001_width = 385px;
+$mashina_090001_height = 264px;
+$mashina_090001_total_width = 1175px;
+$mashina_090001_total_height = 812px;
+$mashina_090001_image = '../../images/build/sprite.png';
+$mashina_090001 = 0px 0px 0px 0px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090001';
+$mashina_090007_name = 'mashina_090007';
+$mashina_090007_x = 395px;
+$mashina_090007_y = 0px;
+$mashina_090007_offset_x = -395px;
+$mashina_090007_offset_y = 0px;
+$mashina_090007_width = 385px;
+$mashina_090007_height = 264px;
+$mashina_090007_total_width = 1175px;
+$mashina_090007_total_height = 812px;
+$mashina_090007_image = '../../images/build/sprite.png';
+$mashina_090007 = 395px 0px -395px 0px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090007';
+$mashina_090013_name = 'mashina_090013';
+$mashina_090013_x = 0px;
+$mashina_090013_y = 274px;
+$mashina_090013_offset_x = 0px;
+$mashina_090013_offset_y = -274px;
+$mashina_090013_width = 385px;
+$mashina_090013_height = 264px;
+$mashina_090013_total_width = 1175px;
+$mashina_090013_total_height = 812px;
+$mashina_090013_image = '../../images/build/sprite.png';
+$mashina_090013 = 0px 274px 0px -274px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090013';
+$mashina_090019_name = 'mashina_090019';
+$mashina_090019_x = 395px;
+$mashina_090019_y = 274px;
+$mashina_090019_offset_x = -395px;
+$mashina_090019_offset_y = -274px;
+$mashina_090019_width = 385px;
+$mashina_090019_height = 264px;
+$mashina_090019_total_width = 1175px;
+$mashina_090019_total_height = 812px;
+$mashina_090019_image = '../../images/build/sprite.png';
+$mashina_090019 = 395px 274px -395px -274px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090019';
+$mashina_090025_name = 'mashina_090025';
+$mashina_090025_x = 790px;
+$mashina_090025_y = 0px;
+$mashina_090025_offset_x = -790px;
+$mashina_090025_offset_y = 0px;
+$mashina_090025_width = 385px;
+$mashina_090025_height = 264px;
+$mashina_090025_total_width = 1175px;
+$mashina_090025_total_height = 812px;
+$mashina_090025_image = '../../images/build/sprite.png';
+$mashina_090025 = 790px 0px -790px 0px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090025';
+$mashina_090031_name = 'mashina_090031';
+$mashina_090031_x = 790px;
+$mashina_090031_y = 274px;
+$mashina_090031_offset_x = -790px;
+$mashina_090031_offset_y = -274px;
+$mashina_090031_width = 385px;
+$mashina_090031_height = 264px;
+$mashina_090031_total_width = 1175px;
+$mashina_090031_total_height = 812px;
+$mashina_090031_image = '../../images/build/sprite.png';
+$mashina_090031 = 790px 274px -790px -274px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090031';
+$mashina_090037_name = 'mashina_090037';
+$mashina_090037_x = 0px;
+$mashina_090037_y = 548px;
+$mashina_090037_offset_x = 0px;
+$mashina_090037_offset_y = -548px;
+$mashina_090037_width = 385px;
+$mashina_090037_height = 264px;
+$mashina_090037_total_width = 1175px;
+$mashina_090037_total_height = 812px;
+$mashina_090037_image = '../../images/build/sprite.png';
+$mashina_090037 = 0px 548px 0px -548px 385px 264px 1175px 812px '../../images/build/sprite.png' 'mashina_090037';
+$spritesheet_width = 1175px;
+$spritesheet_height = 812px;
+$spritesheet_image = '../../images/build/sprite.png';
+$spritesheet_sprites = $mashina_090001 $mashina_090007 $mashina_090013 $mashina_090019 $mashina_090025 $mashina_090031 $mashina_090037;
+$spritesheet = 1175px 812px '../../images/build/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}

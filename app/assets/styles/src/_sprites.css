@@ -2,7 +2,11 @@
 Icon classes can be used entirely standalone. They are named after their original file names.
 
 ```html
-<i class="icon-home"></i>
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
 ```
 */
 .icon-mashina_090001 {
@@ -13,37 +17,37 @@ Icon classes can be used entirely standalone. They are named after their origina
 }
 .icon-mashina_090007 {
   background-image: url(../../images/build/sprite.png);
-  background-position: 0px -264px;
+  background-position: -395px 0px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090013 {
   background-image: url(../../images/build/sprite.png);
-  background-position: 0px -528px;
+  background-position: 0px -274px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090019 {
   background-image: url(../../images/build/sprite.png);
-  background-position: 0px -792px;
+  background-position: -395px -274px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090025 {
   background-image: url(../../images/build/sprite.png);
-  background-position: 0px -1056px;
+  background-position: -790px 0px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090031 {
   background-image: url(../../images/build/sprite.png);
-  background-position: 0px -1320px;
+  background-position: -790px -274px;
   width: 385px;
   height: 264px;
 }
 .icon-mashina_090037 {
   background-image: url(../../images/build/sprite.png);
-  background-position: 0px -1584px;
+  background-position: 0px -548px;
   width: 385px;
   height: 264px;
 }

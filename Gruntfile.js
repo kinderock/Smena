@@ -1,8 +1,6 @@
 module.exports = function(grunt) {
 	var autoprefixer = require('autoprefixer-core');
 	require('load-grunt-tasks')(grunt);
-	grunt.loadNpmTasks('grunt-spritesmith');
-	grunt.loadNpmTasks('grunt-bower-concat');
 
 	grunt.initConfig({
 	coffee:{
@@ -17,8 +15,11 @@ module.exports = function(grunt) {
 	},
 
 	bower_concat: {
-		all: {
-			dest: 'assets/js/src/vendor/_bower.js',  // Склеенный файл
+		js: {
+			dest: 'assets/js/src/vendor/bower.js',
+		},
+		css: {
+			cssDest: 'assets/styles/src/bower.css',
 		}
 	},
 
@@ -84,42 +85,40 @@ module.exports = function(grunt) {
 	//    }
 	//  },
 
-	//  sass: {
-	//    dist: {
-	//      options: {
-	//        style: 'expanded'
-	//      },
-	//      files: {
-	//        'assets/styles/src/common.css': 'assets/styles/src/common.sass'
-	//      }
-	//    }
-	//  },
+	stylus: {
+		options: {
+			compress: false
+		},
+		compile: {
+			files: {
+				'assets/styles/src/common.css': 'assets/styles/src/common.styl'
+			}
+		}
+	},
 
+	postcss: {
+		options: {
+			processors: [
+				autoprefixer({ browsers: ['last 2 version'] }).postcss
+			]
+		},
+		dist: { src: 'assets/styles/src/*.css' }
+	},
 
-	//  postcss: {
-	//    options: {
-	//      processors: [
-	//        autoprefixer({ browsers: ['last 2 version'] }).postcss
-	//      ]
-	//    },
-	//    dist: { src: 'assets/styles/src/*.css' }
-	//  },
+	concat_css: {
+		all: {
+			src: ['assets/styles/src/fonts.css', 'assets/styles/src/_bower.css', 'assets/styles/src/sprites.css', 'assets/styles/src/*.css'],
+			dest: "assets/styles/build/production.css"
+		}
+	},
 
-	//  cssjoin: {
-	//    join :{
-	//      files: {
-	//        'assets/styles/build/production.css': ['assets/styles/src/fonts.css','assets/styles/src/sprites.css','assets/styles/src/*.css']
-	//      }
-	//    }
-	//  },
-
-	//  cssmin: {
-	//    combine: {
-	//      files: {
-	//        'assets/styles/build/production.min.css': 'assets/styles/build/production.css'
-	//      }
-	//    }
-	//  },
+	cssmin: {
+		combine: {
+			files: {
+				'assets/styles/build/production.min.css': 'assets/styles/build/production.css'
+			}
+		}
+	},
 	
 	//  allhaml: {
 	//    options: {
@@ -180,14 +179,13 @@ module.exports = function(grunt) {
 	//      },
 	//    },
 	//  }
-	// });
+	});
 
 	// grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'sprite', 'less', 'postcss', 'cssjoin' , 'cssmin', 'allhaml']);
-	grunt.registerTask('scripts', ['coffee', 'concat', 'uglify']);
+	grunt.registerTask('default', ['coffee', 'bower_concat:js', 'concat', 'uglify']);
+	grunt.registerTask('scripts', ['coffee', 'bower_concat', 'concat', 'uglify']);
 	// grunt.registerTask('img', ['sprite']);
-	// grunt.registerTask('getless', ['less', 'postcss']);
-	// grunt.registerTask('css', ['postcss', 'cssjoin' , 'cssmin']);
-	// grunt.registerTask('allcss', ['sprite', 'less', 'cssjoin' , 'cssmin']);
+	grunt.registerTask('css', ['bower_concat:css', 'stylus', 'postcss', 'concat_css' , 'cssmin']);
 	// grunt.registerTask('haml', ['allhaml']);
 
 	// grunt.registerTask('start', ['connect:livereload', 'watch']);

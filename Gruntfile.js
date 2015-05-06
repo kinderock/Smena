@@ -50,34 +50,47 @@ module.exports = function(grunt) {
 					dest: 'app/assets/images/src/'
 				}]
 			},
-			build: {
-				files: [{
-					expand: true,
-					cwd: 'app/assets/images/build/**/*',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'app/assets/images/build/'
-				}]
-			}
+			// build: {
+			// 	files: [{
+			// 		expand: true,
+			// 		cwd: 'app/assets/images/build/**/*',
+			// 		src: ['**/*.{png,jpg,gif}'],
+			// 		dest: 'app/assets/images/build/'
+			// 	}]
+			// }
 		},
 
 		sprite:{
-			css: {
-				src: 'app/assets/images/src/*.png',
-				dest: 'app/assets/images/build/sprite.png',
-				padding: 10,
-				destCss: 'app/assets/styles/src/_sprites.css',
-				engine: 'gmsmith',
-				cssFormat: 'css'
-			},
 			styl: {
 				src: 'app/assets/images/src/*.png',
+				retinaSrcFilter: 'app/assets/images/src/*2x.png',
 				dest: 'app/assets/images/build/sprite.png',
-				padding: 10,
+				retinaDest: 'app/assets/images/build/sprite@2x.png',
+				padding: 1,
 				destCss: 'app/assets/styles/src/_sprites.styl',
 				engine: 'gmsmith',
-				cssFormat: 'stylus'
+				cssFormat: 'stylus_retina'
 			}
 		},
+
+		// 		sprite:{
+		// 	dist: {
+		// 		src: 'app/assets/images/src/*.png',
+		// 		dest: 'app/assets/images/build/sprite.png',
+		// 		padding: 2,
+		// 		destCss: 'app/assets/styles/src/_sprites.styl',
+		// 		engine: 'gmsmith',
+		// 		cssFormat: 'stylus'
+		// 	},
+		// 	dist_2x: {
+		// 		src: 'app/assets/images/src/retina/*.png',
+		// 		dest: 'app/assets/images/build/sprite@2x.png',
+		// 		padding: 2,
+		// 		destCss: 'app/assets/styles/src/_sprites_2x.styl',
+		// 		engine: 'gmsmith',
+		// 		cssFormat: 'stylus'
+		// 	}
+		// },
 
 		stylus: {
 			options: {
@@ -149,7 +162,7 @@ module.exports = function(grunt) {
 				}
 			},
 			css: {
-				files: ['app/assets/styles/src/sprites.css','app/assets/styles/src/*','app/assets/styles/src/**/*.less','bower_components/**/*'],
+				files: ['app/assets/styles/src/sprites.css', 'app/assets/styles/src/**/*','bower_components/**/*'],
 				tasks: ['bower_concat:css', 'stylus', 'postcss', 'concat_css' , 'cssmin'],
 				options: {
 					spawn: false,

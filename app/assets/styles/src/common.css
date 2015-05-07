@@ -198,16 +198,27 @@ body {
   font-size: 10px;
   background: #fff;
 }
-.task {
-  padding: 60px 0px;
-}
-.task:nth-child(odd) {
-  background: #e2fffe;
+.wrapper {
+  width: 960px;
+  margin: auto;
 }
 .mcenter {
   margin: auto;
 }
-h2 {
-  font-size: 1.6em;
-  margin-top: 20px;
+.footer {
+  background: #252525;
+  padding-top: 35px;
+}
+.footer__nav__item {
+  display: inline-block;
+}
+.footer__nav__link {
+  color: #fff;
+}
+.logo {
+  display: block;
+  background-image: url("../../images/build/sprite.png");
+  background-position: 0px 0px;
+  width: 104px;
+  height: 26px;
 }

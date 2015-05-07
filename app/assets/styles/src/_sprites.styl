@@ -22,17 +22,17 @@ $logo_total_width = 104px;
 $logo_total_height = 26px;
 $logo_image = '../../images/build/sprite.png';
 $logo = 0px 0px 0px 0px 104px 26px 104px 26px '../../images/build/sprite.png' 'logo';
-$logo@2x_name = 'logo@2x';
-$logo@2x_x = 0px;
-$logo@2x_y = 0px;
-$logo@2x_offset_x = 0px;
-$logo@2x_offset_y = 0px;
-$logo@2x_width = 208px;
-$logo@2x_height = 53px;
-$logo@2x_total_width = 208px;
-$logo@2x_total_height = 53px;
-$logo@2x_image = '../../images/build/sprite@2x.png';
-$logo@2x = 0px 0px 0px 0px 208px 53px 208px 53px '../../images/build/sprite@2x.png' 'logo@2x';
+$logo_2x_name = 'logo-2x';
+$logo_2x_x = 0px;
+$logo_2x_y = 0px;
+$logo_2x_offset_x = 0px;
+$logo_2x_offset_y = 0px;
+$logo_2x_width = 208px;
+$logo_2x_height = 53px;
+$logo_2x_total_width = 208px;
+$logo_2x_total_height = 53px;
+$logo_2x_image = '../../images/build/sprite@2x.png';
+$logo_2x = 0px 0px 0px 0px 208px 53px 208px 53px '../../images/build/sprite@2x.png' 'logo-2x';
 $spritesheet_width = 104px;
 $spritesheet_height = 26px;
 $spritesheet_image = '../../images/build/sprite.png';
@@ -41,7 +41,7 @@ $spritesheet = 104px 26px '../../images/build/sprite.png' $spritesheet_sprites;
 $retina_spritesheet_width = 208px;
 $retina_spritesheet_height = 53px;
 $retina_spritesheet_image = '../../images/build/sprite@2x.png';
-$retina_spritesheet_sprites = $logo@2x;
+$retina_spritesheet_sprites = $logo_2x;
 $retina_spritesheet = 208px 53px '../../images/build/sprite@2x.png' $retina_spritesheet_sprites;
 
 /*
@@ -50,7 +50,7 @@ These "retina group" variables are mappings for the naming and pairing of normal
 The list formatted variables are intended for mixins like `retinaSprite` and `retinaSprites`.
 */
 $logo_group_name = 'logo';
-$logo_group = 'logo' $logo $logo@2x;
+$logo_group = 'logo' $logo $logo_2x;
 $retina_groups = $logo_group;
 
 /*

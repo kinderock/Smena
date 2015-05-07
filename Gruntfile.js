@@ -63,7 +63,7 @@ module.exports = function(grunt) {
 		sprite:{
 			styl: {
 				src: 'app/assets/images/src/*.png',
-				retinaSrcFilter: 'app/assets/images/src/*2x.png',
+				retinaSrcFilter: 'app/assets/images/src/*-2x.png',
 				dest: 'app/assets/images/build/sprite.png',
 				retinaDest: 'app/assets/images/build/sprite@2x.png',
 				padding: 1,
@@ -192,7 +192,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['coffee', 'bower_concat:js', 'concat', 'uglify', 'bower_concat:css', 'stylus', 'postcss', 'imagemin', 'sprite', 'concat_css' , 'cssmin', 'jade']);
+	grunt.registerTask('default', ['coffee', 'bower_concat:js', 'concat', 'uglify', 'bower_concat:css', 'sprite', 'stylus', 'postcss', 'imagemin', 'concat_css' , 'cssmin', 'jade']);
 	grunt.registerTask('scripts', ['coffee', 'bower_concat:js', 'concat', 'uglify']);
 	grunt.registerTask('css', ['bower_concat:css', 'stylus', 'postcss', 'concat_css' , 'cssmin']);
 	grunt.registerTask('img', ['imagemin', 'sprite']);

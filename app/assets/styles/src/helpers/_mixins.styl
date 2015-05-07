@@ -1,0 +1,28 @@
+// Прозрачность
+opacity($n)
+	opacity $n
+	-moz-opacity $n
+	-khtml-opacity $n
+	-webkit-opacity $n
+	$val = round($n * 100)
+	-ms-filter '"progid:DXImageTransform.Microsoft.Alpha(opacity=%s)"' % $val
+	filter 'alpha(opacity=%s)' % $val
+	
+// Размеры
+size($width, $height)
+	width $width
+	height $height
+	
+// Сlear
+clearfix()
+	&:before
+	&:after
+		content ""
+		display table
+	&:after
+		clear both
+		
+// Font
+font($fz, $lh)
+	font-size $fz
+	line-height $lh

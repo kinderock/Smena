@@ -1,0 +1,57 @@
+.catalog
+	padding 55px 80px
+	
+	&__list
+		margin-bottom 40px
+		&__item
+			margin-bottom 30px
+			position relative
+
+	
+	&__overlay
+		position absolute
+		background rgba(0, 92, 182, 0.75)
+		top 0
+		transition: all 0.15s linear
+		opacity(0)
+		size(100%, 100%)
+		
+	&__photo
+		display block
+		cursor pointer
+		margin-bottom 5px
+		position relative
+		&:hover
+			.catalog__overlay
+				opacity(1)
+		
+	&__clothes
+		position absolute
+		right 10px
+		top 20px
+		
+		&__item
+			background #f0f0f0
+			overflow hidden
+			display block
+			border-radius 360px
+			margin-bottom 20px
+			size(55px,55px)
+		
+		
+	&__stylist
+		position relative
+		margin-left 65px
+		font(14px, 18px)
+		
+		&__photo
+			position absolute
+			left -60px
+			bottom 0
+			z-index 99
+		
+		&__name
+			font-weight 600
+		
+		&__label
+			color #7a7a7a

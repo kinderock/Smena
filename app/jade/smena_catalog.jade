@@ -7,7 +7,7 @@ html(lang="en")
 		link(rel="stylesheet", href="foundation/css/app.css")
 		link(rel="stylesheet", href="assets/styles/build/production.min.css")
 	body
-		header.header.header_promo
+		header.header
 			a.sprite_logo.header__logo(href="")
 
 			nav.header__nav
@@ -23,63 +23,13 @@ html(lang="en")
 					li.header__nav__item
 						a(href="") Регистрация
 
-
-		section.promo
+		
+		.heading.heading_centered
 			.wrapper
-				.row.large-8.columns.large-centered
-					h1.promo__title	Твой новый образ
-					.promo__lead SMENA – онлайн сервис, где профессиональные стилисты помогут изменить гардероб и подобрать вещи, которые подойдут именно вам
-
-				.row
-					.large-3.columns.large-centered
-						a.button.button__catalog(href="") Начать консультацию
-
-			.promo__labels
-				.wrapper
-					.promo__label
-						.promo__label__icon
-							.icon.sprite_promo-bowtie
-						.promo__label__lead
-							| Подобрать образ
-							br
-							| под повод
-
-					.promo__label
-						.promo__label__icon
-							.icon.sprite_promo-glasses
-						.promo__label__lead
-							| Подобрать
-							br
-							| Вещь
-
-					.promo__label
-						.promo__label__icon
-							.icon.sprite_promo-bags
-						.promo__label__lead
-							| Подобрать образ
-							br
-							| под вещь
-
-					.promo__label
-						.promo__label__icon
-							.icon.sprite_promo-hanger
-						.promo__label__lead
-							| Подобрать
-							br
-							| новый имидж
+				h1.heading Бесплатные смены
 
 
-		section.socials
-			.wrapper
-
-
-		section.features
-			p.heading Как работает Smena?
-			.wrapper
-
-
-		section.catalog
-			p.heading Бесплатные смены
+		.catalog_inner
 			.wrapper
 				.catalog__list
 					.row
@@ -154,7 +104,7 @@ html(lang="en")
 									img(src="images/catalog_stylist.jpg")
 								a.catalog__stylist__name Василий Степанов
 								.catalog__stylist__label Стилист
-					.row
+
 						.catalog__list__item.large-3.columns
 							.catalog__photo
 								.catalog__clothes
@@ -227,33 +177,99 @@ html(lang="en")
 								a.catalog__stylist__name Василий Степанов
 								.catalog__stylist__label Стилист
 
-				.row
-					.large-2.columns.large-centered
-						a.button.button__catalog(href="") Все смены
+						.catalog__list__item.large-3.columns
+							.catalog__photo
+								.catalog__clothes
+									img.catalog__clothes__item(src="images/catalog_clothes1.png")
+									img.catalog__clothes__item(src="images/catalog_clothes2.png")
+									img.catalog__clothes__item(src="images/catalog_clothes3.png")
+									img.catalog__clothes__item(src="images/catalog_clothes4.png")
 
+								img(src="images/catalog_photo.jpg")
+							
+								.catalog__overlay
 
-		section.reports
-			p.heading Отзывы клиентов
-			.wrapper
-				.row
-					.large-3.columns
-						img.reports__image(src="http://www.avatar-mix.ru/avatars_200x200/1425.jpg", alt="")
-						.reports__username Ася Нежданная
-						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-					.large-3.columns
-						img.reports__image(src="http://zano.ru/avatar/images/200j009.jpg", alt="")
-						.reports__username Антон Ершов
-						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-					.large-3.columns
-						img.reports__image(src="http://zano.ru/avatar/images/200j036.jpg", alt="")
-						.reports__username Алина Андреева
-						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-					.large-3.columns
-						img.reports__image(src="http://zano.ru/avatar/images/200j064.jpg", alt="")
-						.reports__username Сергей Баргамон
-						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+							.catalog__stylist
+								a.catalog__stylist__photo
+									img(src="images/catalog_stylist.jpg")
+								a.catalog__stylist__name Василий Степанов
+								.catalog__stylist__label Стилист
+								
+						.catalog__list__item.large-3.columns
+							.catalog__photo
+								.catalog__clothes
+									img.catalog__clothes__item(src="images/catalog_clothes1.png")
+									img.catalog__clothes__item(src="images/catalog_clothes2.png")
+									img.catalog__clothes__item(src="images/catalog_clothes3.png")
+									img.catalog__clothes__item(src="images/catalog_clothes4.png")
 
+								img(src="images/catalog_photo.jpg")
+							
+								.catalog__overlay
 
+							.catalog__stylist
+								a.catalog__stylist__photo
+									img(src="images/catalog_stylist.jpg")
+								a.catalog__stylist__name Василий Степанов
+								.catalog__stylist__label Стилист
+
+						.catalog__list__item.large-3.columns
+							.catalog__photo
+								.catalog__clothes
+									img.catalog__clothes__item(src="images/catalog_clothes1.png")
+									img.catalog__clothes__item(src="images/catalog_clothes2.png")
+									img.catalog__clothes__item(src="images/catalog_clothes3.png")
+									img.catalog__clothes__item(src="images/catalog_clothes4.png")
+
+								img(src="images/catalog_photo.jpg")
+							
+								.catalog__overlay
+
+							.catalog__stylist
+								a.catalog__stylist__photo
+									img(src="images/catalog_stylist.jpg")
+								a.catalog__stylist__name Василий Степанов
+								.catalog__stylist__label Стилист
+
+						.catalog__list__item.large-3.columns
+							.catalog__photo
+								.catalog__clothes
+									img.catalog__clothes__item(src="images/catalog_clothes1.png")
+									img.catalog__clothes__item(src="images/catalog_clothes2.png")
+									img.catalog__clothes__item(src="images/catalog_clothes3.png")
+									img.catalog__clothes__item(src="images/catalog_clothes4.png")
+
+								img(src="images/catalog_photo.jpg")
+							
+								.catalog__overlay
+
+							.catalog__stylist
+								a.catalog__stylist__photo
+									img(src="images/catalog_stylist.jpg")
+								a.catalog__stylist__name Василий Степанов
+								.catalog__stylist__label Стилист
+			
+			.pagination-centered
+				ul.pagination
+					li.arrow.unavailable
+						a(href='') «
+					li.current
+						a(href='') 1
+					li
+						a(href='') 2
+					li
+						a(href='') 3
+					li
+						a(href='') 4
+					li.unavailable
+						a(href='') …
+					li
+						a(href='') 12
+					li
+						a(href='') 13
+					li.arrow
+						a(href='') »
+						
 		footer.footer
 			.wrapper
 				.row

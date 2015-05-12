@@ -69,7 +69,10 @@ module.exports = function(grunt) {
 				padding: 1,
 				destCss: 'app/assets/styles/src/_sprites.styl',
 				engine: 'gmsmith',
-				cssFormat: 'stylus_retina'
+				cssFormat: 'stylus_retina',
+				cssVarMap: function (sprite) {
+					sprite.name = 'sprite_' + sprite.name;
+				}
 			}
 		},
 

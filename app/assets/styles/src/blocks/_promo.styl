@@ -1,0 +1,43 @@
+.promo
+	background url('/app/images/promo_bg.jpg') top center no-repeat
+	background-size cover
+	height 640px
+	position relative
+	color white
+	text-align center
+	padding-top 180px
+	
+	&__title
+		color inherit
+		margin-bottom 25px
+		font(60px, 44px)
+		
+	&__lead
+		font-weight 300
+		margin-bottom 40px
+		font(18px, 26px)
+		
+	&__labels
+		position absolute
+		width 100%
+		bottom 40px
+		
+	&__label
+		display inline-block
+		width 160px
+		
+		&__lead
+			font-weight 300
+			font(16px, 20px)
+			
+		&__icon
+			height 66px
+			margin-bottom 10px
+			&::after
+				content ""
+				display inline-block
+				vertical-align middle
+				height 100%
+			
+			& .icon
+				vertical-align middle

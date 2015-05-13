@@ -83,149 +83,24 @@ html(lang="en")
 			.wrapper
 				.catalog__list
 					.row
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
+						- for (var i=0; i<8; i++)
+							.catalog__list__item.large-3.columns
+								.catalog__photo
+									.catalog__clothes
+										img.catalog__clothes__item(src="images/catalog_clothes1.png")
+										img.catalog__clothes__item(src="images/catalog_clothes2.png")
+										img.catalog__clothes__item(src="images/catalog_clothes3.png")
+										img.catalog__clothes__item(src="images/catalog_clothes4.png")
 
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
+									img(src="images/catalog_photo.jpg")
 								
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
+									.catalog__overlay
 
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
-
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
-
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
-					.row
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
-								
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
-
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
-
-						.catalog__list__item.large-3.columns
-							.catalog__photo
-								.catalog__clothes
-									img.catalog__clothes__item(src="images/catalog_clothes1.png")
-									img.catalog__clothes__item(src="images/catalog_clothes2.png")
-									img.catalog__clothes__item(src="images/catalog_clothes3.png")
-									img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-								img(src="images/catalog_photo.jpg")
-							
-								.catalog__overlay
-
-							.catalog__stylist
-								a.catalog__stylist__photo
-									img(src="images/catalog_stylist.jpg")
-								a.catalog__stylist__name Василий Степанов
-								.catalog__stylist__label Стилист
+								.catalog__stylist
+									a.catalog__stylist__photo
+										img(src="images/catalog_stylist.jpg")
+									a.catalog__stylist__name Василий Степанов
+									.catalog__stylist__label Стилист
 
 				.row
 					.large-2.columns.large-centered

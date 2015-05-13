@@ -8,7 +8,7 @@ html(lang="en")
 		link(rel="stylesheet", href="assets/styles/build/production.min.css")
 	body
 		header.header.header_inner
-			a.sprite_logo_inner.header__logo(href="")
+			a.sprite_logo_inner.icon.header__logo(href="")
 
 			nav.header__nav
 				ul.header__nav__list
@@ -26,37 +26,46 @@ html(lang="en")
 		
 		.heading.heading_centered
 			.wrapper
-				h1.heading Бесплатные смены
+				h1.heading Стилисты
 
 		.filters
 			.wrapper.wrapper_row
 				.filters__list
-					a.filters__item.active(href="") По дате
-					a.filters__item(href="") Популярные
-					a.filters__item(href="") По стилистам
+					a.filters__item.active(href="")
+						| Стилистов
+						span.filters__count 545 
+					a.filters__item(href="")
+						| Свободных стилистов
+						span.filters__count 545 
 
 		.catalog_inner
 			.wrapper
-				.catalog__list
+				.stylist__list
 					.row
-						- for (var i=0; i<8; i++)
-							.catalog__list__item.large-3.columns
+						- for (var i=0; i<12; i++)
+							.stylist__item.large-3.columns
 								.catalog__photo
-									.catalog__clothes
-										img.catalog__clothes__item(src="images/catalog_clothes1.png")
-										img.catalog__clothes__item(src="images/catalog_clothes2.png")
-										img.catalog__clothes__item(src="images/catalog_clothes3.png")
-										img.catalog__clothes__item(src="images/catalog_clothes4.png")
-
-									img(src="images/catalog_photo.jpg")
-								
+									img(src="images/stylist_220.jpg")
 									.catalog__overlay
 
-								.catalog__stylist
-									a.catalog__stylist__photo
-										img(src="images/catalog_stylist.jpg")
-									a.catalog__stylist__name Василий Степанов
-									.catalog__stylist__label Стилист
+								.stylist__info
+									a.stylist__name(src="")
+										| Василиcа Степанова
+
+									.stylist__rating
+										.icon.stylist__rating__item_full
+										.icon.stylist__rating__item_full
+										.icon.stylist__rating__item_full
+										.icon.stylist__rating__item
+										.icon.stylist__rating__item
+
+									.stylist__summary
+										.stylist__summary__item.count
+											span 24
+											| Смены
+										.stylist__summary__item.status
+											span.icon
+											| Свободен
 
 			
 			.pagination-centered

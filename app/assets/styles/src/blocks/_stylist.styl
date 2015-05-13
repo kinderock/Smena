@@ -1,0 +1,55 @@
+.stylist
+	&__list .catalog__photo
+		margin-bottom 0
+
+	&__item
+		margin-bottom 20px
+		
+	&__info
+		background: white
+		text-align center
+		padding 15px
+		transition: all .15s linear;
+
+	&__item:hover &__info
+		background: $clr_blue
+		color white
+		
+	&__name
+		font-weight 600
+		display block
+		margin-bottom 15px
+		font(18px, 20px)
+
+		&:hover
+			text-decoration none
+			
+	&__rating
+		margin-bottom 30px
+		
+		&__item
+			retinaSprite($sprite_rating_empty_group)
+			
+			&_full
+				retinaSprite($sprite_rating_full_group)
+
+	&__summary
+		clearfix()
+		&__item
+			float left
+			border-left 1px solid #e4e4e4
+			color #c1c1c1
+			size(90px, 40px)
+			
+			&:first-child
+				border-left none	
+				
+			& span			
+		
+	&__item:hover
+		& .catalog__overlay
+			opacity(1)
+			
+		& .stylist__summary__item 
+			color white
+			border-color: white

@@ -1,0 +1,33 @@
+.filters
+	margin 10px 0 30px
+	
+	&__list
+		float left
+		
+	&__count
+		display inline-block
+		margin-left 10px
+		
+	&__item
+		background: transparent
+		text-align center
+		color #9f9f9f
+		margin-left 10px
+		display inline-block
+		min-width 140px
+		padding 0px 15px
+		border-radius 3px
+		font(16px, 36px)
+		
+		&:first-child
+			margin-left 0
+			clear left
+		
+		&.active
+			background #f0f0f0
+			color $clr_base
+			&:hover
+				text-decoration none
+			
+			& .filters__count
+				color $clr_blue

@@ -159,7 +159,7 @@ module.exports = function(grunt) {
 			},
 			sprites:{
 				files: ['app/assets/images/src/*', 'app/assets/images/build/**/*'],
-				tasks: ['imagemin', 'sprite'],
+				tasks: ['imagemin', 'sprite', 'stylus', 'postcss', 'concat_css' , 'cssmin'],
 				options: {
 					spawn: false,
 				}

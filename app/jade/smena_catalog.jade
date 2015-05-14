@@ -2,31 +2,16 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		title Первый документ
+		title Каталог смен
 
 		link(rel="stylesheet", href="foundation/css/app.css")
 		link(rel="stylesheet", href="assets/styles/build/production.min.css")
 	body
-		header.header.header_inner
-			a.sprite_logo_inner.header__logo(href="")
+		include includes/header_inner.jade
 
-			nav.header__nav
-				ul.header__nav__list
-					li.header__nav__item
-						a(href="") Стилисты
-					li.header__nav__item
-						a(href="") Помощь
-					li.header__nav__item
-						a(href="") Блог
-					li.header__nav__item
-						a(href="") Вход
-					li.header__nav__item
-						a(href="") Регистрация
-
-		
 		.heading.heading_centered
 			.wrapper
-				h1.heading Бесплатные смены
+				h1.title Бесплатные смены
 
 		.filters
 			.wrapper.wrapper_row
@@ -79,25 +64,5 @@ html(lang="en")
 						a(href='') 13
 					li.arrow
 						a(href='') »
-						
-		footer.footer
-			.wrapper
-				.row
-					.large-2.columns
-						a.button.button__footer(href="") Стать стилистом
-						
-					ul.footer__nav.large-4.columns
-						li.footer__nav__item
-							a(href="") О проекте
-						li.footer__nav__item
-							a(href="") Помощь
-						li.footer__nav__item
-							a(href="") Партнерам
-					.large-6.columns
-						вфыв
-			
-			.wrapper.wrapper_row
-				.footer__credits
-					span.footer__credits__item © 2014 Smena
-					a.footer__credits__item(href="") Пользовательское соглашение
-					a.footer__credits__item(href="mailto:support@smena.ru") support@smena.ru
+
+		include includes/footer.jade

@@ -2,7 +2,7 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		title Первый документ
+		title Главная страница
 
 		link(rel="stylesheet", href="foundation/css/app.css")
 		link(rel="stylesheet", href="assets/styles/build/production.min.css")
@@ -74,12 +74,12 @@ html(lang="en")
 
 
 		section.features
-			p.heading Как работает Smena?
+			p.title Как работает Smena?
 			.wrapper
 
 
 		section.catalog
-			p.heading Бесплатные смены
+			p.title Бесплатные смены
 			.wrapper
 				.catalog__list
 					.row
@@ -108,7 +108,7 @@ html(lang="en")
 
 
 		section.reports
-			p.heading Отзывы клиентов
+			p.title Отзывы клиентов
 			.wrapper
 				.row
 					.large-3.columns
@@ -128,24 +128,4 @@ html(lang="en")
 						.reports__username Сергей Баргамон
 						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
 
-
-		footer.footer
-			.wrapper
-				.row
-					.large-2.columns
-						a.button.button__footer(href="") Стать стилистом
-						
-					ul.footer__nav.large-4.columns
-						li.footer__nav__item
-							a(href="") О проекте
-						li.footer__nav__item
-							a(href="") Помощь
-						li.footer__nav__item
-							a(href="") Партнерам
-					.large-6.columns
-						вфыв
-
-				.footer__credits
-					span.footer__credits__item © 2014 Smena
-					a.footer__credits__item(href="") Пользовательское соглашение
-					a.footer__credits__item(href="mailto:support@smena.ru") support@smena.ru
+		include includes/footer.jade

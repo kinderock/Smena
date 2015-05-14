@@ -1,4 +1,6 @@
 .stylist
+	
+	// stylist catalog
 	&__list .catalog__photo
 		margin-bottom 0
 
@@ -23,15 +25,6 @@
 
 		&:hover
 			text-decoration none
-			
-	&__rating
-		margin-bottom 30px
-		
-		&__item
-			retinaSprite($sprite_rating_empty_group)
-			
-			&_full
-				retinaSprite($sprite_rating_full_group)
 
 	&__summary
 		clearfix()
@@ -44,7 +37,11 @@
 			&:first-child
 				border-left none	
 				
-			& span			
+			& span
+				color $clr_blue
+				font-weight 600
+				font(18px,20px)
+					
 		
 	&__item:hover
 		& .catalog__overlay
@@ -53,3 +50,28 @@
 		& .stylist__summary__item 
 			color white
 			border-color: white
+			& span
+				color inherit
+				
+		& .rating__item
+			margin 0 2px
+			retinaSprite($sprite_rating_empty_white_group)
+			
+			&.state_full
+				retinaSprite($sprite_rating_full_white_group)
+				
+	// stylist profile
+	&_profile
+		background: $clr_grey_bg
+		padding 30px 0
+		border-bottom: 1px solid #dbdbdb
+		clearfix()
+		
+		&__info
+			float left
+			margin-left 20px
+
+		&__name
+			font-weight 600
+			text-align left
+			font(30px, 30px)

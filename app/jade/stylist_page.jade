@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Страница стилиста
+
+		link(rel="stylesheet", href="foundation/css/app.css")
+		link(rel="stylesheet", href="assets/styles/build/production.min.css")
+	body
+		include includes/header_inner.jade
+		
+		section.stylist_profile
+			.wrapper
+				.row
+					.stylist_profile__photo.large-2.columns
+						img.block(src="http://pikchyriki.net/avatar/krutye/140/8.jpg")
+
+					.stylist_profile__info.large-7
+						.stylist_profile__name Василий Степанов
+
+		section.catalog
+			p.title Портфолио
+			.wrapper
+				.catalog__list
+					.row
+						- for (var i=0; i<8; i++)
+							.catalog__list__item.large-3.columns
+								.catalog__photo
+									img(src="images/catalog_photo.jpg")
+									.catalog__overlay
+				
+				.showmore
+					a.iblock
+						.icon.sprite_getmore
+						b.block Показать ещё
+
+		section.reports
+			p.title Отзывы клиентов
+			.wrapper
+				.row
+					.large-3.columns
+						img.reports__image(src="http://www.avatar-mix.ru/avatars_200x200/1425.jpg", alt="")
+						.reports__username Ася Нежданная
+						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+					.large-3.columns
+						img.reports__image(src="http://zano.ru/avatar/images/200j009.jpg", alt="")
+						.reports__username Антон Ершов
+						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+					.large-3.columns
+						img.reports__image(src="http://zano.ru/avatar/images/200j036.jpg", alt="")
+						.reports__username Алина Андреева
+						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+					.large-3.columns
+						img.reports__image(src="http://zano.ru/avatar/images/200j064.jpg", alt="")
+						.reports__username Сергей Баргамон
+						p.reports__lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+
+		include includes/footer.jade

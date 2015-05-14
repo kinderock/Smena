@@ -2,7 +2,7 @@
 	padding 55px 80px
 	
 	&_inner
-		background #f0f0f0
+		background $clr_grey_bg
 		padding 55px 0px 80px
 	
 	&__list
@@ -17,8 +17,16 @@
 		background rgba(0, 92, 182, 0.65)
 		top 0
 		transition: all 0.15s linear
+		text-align center
 		opacity(0)
 		size(100%, 100%)
+		&::after
+			content ""
+			display inline-block
+			vertical-align middle
+			height 100%
+			& .icon
+				vertical-align middle
 		
 	&__photo
 		display block
@@ -35,7 +43,7 @@
 		top 20px
 		
 		&__item
-			background #f0f0f0
+			background $clr_grey_bg
 			overflow hidden
 			display block
 			border-radius 360px
@@ -59,3 +67,19 @@
 		
 		&__label
 			color #7a7a7a
+			
+.showmore
+	text-align center
+	
+	& a
+		color #777777
+		text-transform uppercase
+
+		&:hover
+			text-decoration none
+			& .icon
+				animation:spin 0.4s linear;
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

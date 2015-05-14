@@ -2,31 +2,16 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		title Первый документ
+		title Каталок стилистов
 
 		link(rel="stylesheet", href="foundation/css/app.css")
 		link(rel="stylesheet", href="assets/styles/build/production.min.css")
 	body
-		header.header.header_inner
-			a.sprite_logo_inner.icon.header__logo(href="")
-
-			nav.header__nav
-				ul.header__nav__list
-					li.header__nav__item
-						a(href="") Стилисты
-					li.header__nav__item
-						a(href="") Помощь
-					li.header__nav__item
-						a(href="") Блог
-					li.header__nav__item
-						a(href="") Вход
-					li.header__nav__item
-						a(href="") Регистрация
-
+		include includes/header_inner.jade
 		
 		.heading.heading_centered
 			.wrapper
-				h1.heading Стилисты
+				h1.title Стилисты
 
 		.filters
 			.wrapper.wrapper_row
@@ -47,24 +32,26 @@ html(lang="en")
 								.catalog__photo
 									img(src="images/stylist_220.jpg")
 									.catalog__overlay
+										i.icon.sprite_watch
 
 								.stylist__info
 									a.stylist__name(src="")
 										| Василиcа Степанова
 
-									.stylist__rating
-										.icon.stylist__rating__item_full
-										.icon.stylist__rating__item_full
-										.icon.stylist__rating__item_full
-										.icon.stylist__rating__item
-										.icon.stylist__rating__item
+									.rating.rating_stylist
+										.icon.rating__item.state_full
+										.icon.rating__item.state_full
+										.icon.rating__item.state_full
+										.icon.rating__item
+										.icon.rating__item
 
 									.stylist__summary
 										.stylist__summary__item.count
-											span 24
+											span.block 24
 											| Смены
 										.stylist__summary__item.status
-											span.icon
+											span.block
+												.icon.sprite_status_ok_small
 											| Свободен
 
 			
@@ -88,25 +75,5 @@ html(lang="en")
 						a(href='') 13
 					li.arrow
 						a(href='') »
-						
-		footer.footer
-			.wrapper
-				.row
-					.large-2.columns
-						a.button.button__footer(href="") Стать стилистом
-						
-					ul.footer__nav.large-4.columns
-						li.footer__nav__item
-							a(href="") О проекте
-						li.footer__nav__item
-							a(href="") Помощь
-						li.footer__nav__item
-							a(href="") Партнерам
-					.large-6.columns
-						вфыв
-			
-			.wrapper.wrapper_row
-				.footer__credits
-					span.footer__credits__item © 2014 Smena
-					a.footer__credits__item(href="") Пользовательское соглашение
-					a.footer__credits__item(href="mailto:support@smena.ru") support@smena.ru
+
+		include includes/footer.jade

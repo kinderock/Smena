@@ -76,25 +76,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// 		sprite:{
-		// 	dist: {
-		// 		src: 'app/assets/images/src/*.png',
-		// 		dest: 'app/assets/images/build/sprite.png',
-		// 		padding: 2,
-		// 		destCss: 'app/assets/styles/src/_sprites.styl',
-		// 		engine: 'gmsmith',
-		// 		cssFormat: 'stylus'
-		// 	},
-		// 	dist_2x: {
-		// 		src: 'app/assets/images/src/retina/*.png',
-		// 		dest: 'app/assets/images/build/sprite@2x.png',
-		// 		padding: 2,
-		// 		destCss: 'app/assets/styles/src/_sprites_2x.styl',
-		// 		engine: 'gmsmith',
-		// 		cssFormat: 'stylus'
-		// 	}
-		// },
-
 		stylus: {
 			options: {
 				compress: false

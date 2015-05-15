@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Страница стилиста
+
+		link(rel="stylesheet", href="foundation/css/app.css")
+		link(rel="stylesheet", href="assets/styles/build/production.min.css")
+	body
+		include includes/header_inner.jade
+		
+		section.stylist_profile
+			.wrapper
+				.row
+					.stylist_profile__photo.large-2.columns
+						img.block(src="http://pikchyriki.net/avatar/krutye/140/8.jpg")
+
+					.stylist_profile__info.large-6
+						.stylist_profile__name Василий Степанов
+						.stylist_profile__summary
+							a.stylist_profile__summary__item.iblock(src="")
+								| О себе
+							.stylist_profile__summary__item.iblock
+								b 24
+								| Cмены
+
+						a.button(href="") Заказать смену
+
+					.stylist_profile__socials.large-3
+						.rating
+							.icon.rating__item.state_full
+							.icon.rating__item.state_full
+							.icon.rating__item.state_full
+							.icon.rating__item
+							.icon.rating__item
+
+		.heading.heading_centered
+			.wrapper
+				h1.title Профиль
+
+		include includes/footer.jade

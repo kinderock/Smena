@@ -1,12 +1,12 @@
 .stylist
-	
+
 	// stylist catalog
 	&__list .catalog__photo
 		margin-bottom 0
 
 	&__item
 		margin-bottom 20px
-		
+
 	&__info
 		background: white
 		text-align center
@@ -16,7 +16,7 @@
 	&__item:hover &__info
 		background: $clr_blue
 		color white
-		
+
 	&__name
 		font-weight 600
 		display block
@@ -33,45 +33,77 @@
 			border-left 1px solid #e4e4e4
 			color #c1c1c1
 			size(90px, 40px)
-			
+
 			&:first-child
-				border-left none	
-				
+				border-left none
+
 			& span
 				color $clr_blue
 				font-weight 600
 				font(18px,20px)
-					
-		
+
+
 	&__item:hover
 		& .catalog__overlay
 			opacity(1)
-			
+
 		& .stylist__summary__item 
 			color white
 			border-color: white
 			& span
 				color inherit
-				
+
 		& .rating__item
 			margin 0 2px
 			retinaSprite($sprite_rating_empty_white_group)
-			
+
 			&.state_full
 				retinaSprite($sprite_rating_full_white_group)
-				
+
 	// stylist profile
 	&_profile
 		background: $clr_grey_bg
 		padding 30px 0
 		border-bottom: 1px solid #dbdbdb
 		clearfix()
-		
+
 		&__info
 			float left
 			margin-left 20px
+			height 140px
+			position relative
+				
+			& .button
+				width 150px
+				display block
+				position absolute
+				bottom 0
+				left 0
+				margin-bottom 0
+				font-size 16px
 
 		&__name
 			font-weight 600
 			text-align left
 			font(30px, 30px)
+
+		&__summary
+			margin: 20px 0 0
+			font(14px, 30px)
+			& b
+				color $clr_blue
+				font-size 24px
+				margin-right 10px
+
+			& a
+				border-radius 3px
+				border 1px solid #dbdbdb
+				padding 5px 15px
+				line-height 18px
+
+			&__item
+				margin-right 20px
+	
+		&__socials
+			float right
+			padding-right 10px

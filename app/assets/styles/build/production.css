@@ -663,12 +663,46 @@ body {
 .stylist_profile__info {
   float: left;
   margin-left: 20px;
+  height: 140px;
+  position: relative;
+}
+.stylist_profile__info .button {
+  width: 150px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  font-size: 16px;
 }
 .stylist_profile__name {
   font-weight: 600;
   text-align: left;
   font-size: 30px;
   line-height: 30px;
+}
+.stylist_profile__summary {
+  margin: 20px 0 0;
+  font-size: 14px;
+  line-height: 30px;
+}
+.stylist_profile__summary b {
+  color: #005cb6;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.stylist_profile__summary a {
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  padding: 5px 15px;
+  line-height: 18px;
+}
+.stylist_profile__summary__item {
+  margin-right: 20px;
+}
+.stylist_profile__socials {
+  float: right;
+  padding-right: 10px;
 }
 .sprite_getmore {
   background-image: url("../../images/build/sprite.png");

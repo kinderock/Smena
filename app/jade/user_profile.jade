@@ -2,40 +2,73 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		title Страница стилиста
+		title Профиль клиента
 
 		link(rel="stylesheet", href="foundation/css/app.css")
 		link(rel="stylesheet", href="assets/styles/build/production.min.css")
 	body
 		include includes/header_inner.jade
-		
-		section.stylist_profile
-			.wrapper
-				.row
-					.stylist_profile__photo.large-2.columns
-						img.block(src="http://pikchyriki.net/avatar/krutye/140/8.jpg")
-
-					.stylist_profile__info.large-6
-						.stylist_profile__name Василий Степанов
-						.stylist_profile__summary
-							a.stylist_profile__summary__item.iblock(src="")
-								| О себе
-							.stylist_profile__summary__item.iblock
-								b 24
-								| Cмены
-
-						a.button(href="") Заказать смену
-
-					.stylist_profile__socials.large-3
-						.rating
-							.icon.rating__item.state_full
-							.icon.rating__item.state_full
-							.icon.rating__item.state_full
-							.icon.rating__item
-							.icon.rating__item
 
 		.heading.heading_centered
 			.wrapper
 				h1.title Профиль
+
+		.tabs.tabs_profile
+			.wrapper.wrapper_row
+				a.tabs__item.active(src="") личная информация
+				a.tabs__item(src="") фотографии
+				a.tabs__item(src="") ваши параметры
+				a.tabs__item(src="") предпочтения в стиле
+				a.tabs__item(src="") бюджет
+		
+		section.profile
+			.wrapper
+				form.form.form_profile
+					.row.form__row
+						.profile__photo.large-3.columns
+							img(src="https://www.digiramp.com/uploads/user/image/385/avatar_220x220_image.jpg", alt="")
+							
+							a.profile__btn(src="") Изменить фотографию
+
+						.profile__info.large-9.columns
+							.form__row.form__row_half
+								.large-9.columns
+									label.form__label.block Имя фамилия
+									input.form__element(type="text")
+								.large-3.columns
+									label.form__label.block Пол
+									select.form__element
+										option(value='male') Мужской
+										option(value='female') Женский
+							.form__row.form__row_half
+								.large-4.columns
+									label.form__label.block Дата рождения
+									input(type="text")
+								.large-8.columns
+									label.form__label.block E-mail
+									input.form__element(type="text")
+							.form__row.form__row_half
+								.large-4.columns
+									label.form__label.block Телефон
+									input.form__element(type="text")
+								.large-8.columns
+									label.form__label.block Город
+									select.form__element
+										option(value='city1') Москва
+										option(value='city2') Санкт-Петербург
+										option(value='city3') Воркута
+										option(value='city4') Анапа
+							.form__row.form__row_half
+								.large-12.columns
+									| sss
+
+					.row.form__row
+						.large-12.columns
+							label.form__label.block Увлечения
+							textarea.form__element.form__textarea
+
+					.row
+						.large-3.columns
+							a.button.button_profile(href="") Сохранить изменения
 
 		include includes/footer.jade

@@ -197,8 +197,11 @@ body {
   color: #fff;
   text-decoration: none;
 }
-.button__footer {
+.button_footer {
   font-size: 14px;
+}
+.button_profile {
+  font-size: 16px;
 }
 .catalog {
   padding: 55px 80px;
@@ -399,6 +402,49 @@ body {
 .footer__credits__item {
   margin: 0px 15px;
 }
+.form {
+  position: relative;
+  margin-bottom: 25px;
+}
+.form:before,
+.form:after {
+  content: "";
+  display: table;
+}
+.form:after {
+  clear: both;
+}
+.form__label {
+  text-transform: uppercase;
+  color: #777;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 30px;
+}
+.form__element {
+  border-radius: 3px;
+}
+.form__element:focus {
+  border-color: #ccc;
+  background-color: inherit;
+}
+.form__textarea {
+  min-height: 95px;
+}
+.form__row {
+  margin-bottom: 25px;
+}
+.form__row:before,
+.form__row:after {
+  content: "";
+  display: table;
+}
+.form__row:after {
+  clear: both;
+}
+.form__row_half {
+  margin-bottom: 0px;
+}
 .header {
   position: fixed;
   z-index: 199;
@@ -454,6 +500,22 @@ body {
 }
 .heading_centered {
   text-align: center;
+}
+.profile__photo img {
+  display: block;
+  border-radius: 360px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.profile__btn {
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 12px 0 8px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 14px;
 }
 .promo {
   background: url("/app/images/promo_bg.jpg") top center no-repeat;
@@ -702,6 +764,50 @@ body {
 .stylist_profile__socials {
   float: right;
   padding-right: 10px;
+}
+.tabs {
+  position: relative;
+}
+.tabs_profile {
+  margin-bottom: 65px;
+}
+.tabs::after {
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+}
+.tabs__item {
+  display: block;
+  float: left;
+  margin-left: 10px;
+  text-transform: uppercase;
+  color: #777;
+  border: 1px solid #efefef;
+  padding: 9px 20px 4px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transition: all 0.15s linear;
+}
+.tabs__item:hover {
+  text-decoration: none;
+  color: #222;
+  border-color: #ccc;
+}
+.tabs__item:first-child {
+  margin-left: 0;
+  clear: left;
+}
+.tabs__item.active {
+  position: relative;
+  z-index: 2;
+  border-color: #ccc;
+  border-bottom-color: #fff;
+  color: #222;
+  font-weight: 600;
 }
 .sprite_getmore {
   background-image: url("../../images/build/sprite.png");

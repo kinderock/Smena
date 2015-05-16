@@ -1,0 +1,25 @@
+.form
+	position relative
+	margin-bottom 25px
+	clearfix()
+	
+	&__label
+		text-transform uppercase
+		color $clr_grey_light
+		display inline-block
+		font(14px, 30px)
+		
+	&__element
+		border-radius 3px
+		&:focus
+			border-color $clr_separator_grey
+			background-color inherit
+	
+	&__textarea
+		min-height: 95px
+		
+	&__row
+		margin-bottom 25px
+		clearfix()
+		&_half
+			margin-bottom 0px	

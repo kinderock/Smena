@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
-    <title>Страница стилиста</title>
+    <title>Профиль клиента</title>
     <link rel="stylesheet" href="foundation/css/app.css"/>
     <link rel="stylesheet" href="assets/styles/build/production.min.css"/>
   </head>
@@ -19,37 +19,79 @@
       </nav>
     </header>
     <div class="header__padding"></div>
-    <section class="stylist_profile">
-      <div class="wrapper">
-        <div class="row">
-          <div class="stylist_profile__photo large-2 columns"><img src="http://pikchyriki.net/avatar/krutye/140/8.jpg" class="block"/></div>
-          <div class="stylist_profile__info large-6">
-            <div class="stylist_profile__name">Василий Степанов</div>
-            <div class="stylist_profile__summary"><a src="" class="stylist_profile__summary__item iblock">О себе</a>
-              <div class="stylist_profile__summary__item iblock"><b>24</b>Cмены</div>
-            </div><a href="" class="button">Заказать смену</a>
-          </div>
-          <div class="stylist_profile__socials large-3">
-            <div class="rating">
-              <div class="icon rating__item state_full"></div>
-              <div class="icon rating__item state_full"></div>
-              <div class="icon rating__item state_full"></div>
-              <div class="icon rating__item"></div>
-              <div class="icon rating__item"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <div class="heading heading_centered">
       <div class="wrapper">
         <h1 class="title">Профиль</h1>
       </div>
     </div>
+    <div class="tabs tabs_profile">
+      <div class="wrapper wrapper_row"><a src="" class="tabs__item active">личная информация</a><a src="" class="tabs__item">фотографии</a><a src="" class="tabs__item">ваши параметры</a><a src="" class="tabs__item">предпочтения в стиле</a><a src="" class="tabs__item">бюджет</a></div>
+    </div>
+    <section class="profile">
+      <div class="wrapper">
+        <form class="form form_profile">
+          <div class="row form__row">
+            <div class="profile__photo large-3 columns"><img src="https://www.digiramp.com/uploads/user/image/385/avatar_220x220_image.jpg" alt=""/><a src="" class="profile__btn">Изменить фотографию</a></div>
+            <div class="profile__info large-9 columns">
+              <div class="form__row form__row_half">
+                <div class="large-9 columns">
+                  <label class="form__label block">Имя фамилия</label>
+                  <input type="text" class="form__element"/>
+                </div>
+                <div class="large-3 columns">
+                  <label class="form__label block">Пол</label>
+                  <select class="form__element">
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__row form__row_half">
+                <div class="large-4 columns">
+                  <label class="form__label block">Дата рождения</label>
+                  <input type="text"/>
+                </div>
+                <div class="large-8 columns">
+                  <label class="form__label block">E-mail</label>
+                  <input type="text" class="form__element"/>
+                </div>
+              </div>
+              <div class="form__row form__row_half">
+                <div class="large-4 columns">
+                  <label class="form__label block">Телефон</label>
+                  <input type="text" class="form__element"/>
+                </div>
+                <div class="large-8 columns">
+                  <label class="form__label block">Город</label>
+                  <select class="form__element">
+                    <option value="city1">Москва</option>
+                    <option value="city2">Санкт-Петербург</option>
+                    <option value="city3">Воркута</option>
+                    <option value="city4">Анапа</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__row form__row_half">
+                <div class="large-12 columns">sss</div>
+              </div>
+            </div>
+          </div>
+          <div class="row form__row">
+            <div class="large-12 columns">
+              <label class="form__label block">Увлечения</label>
+              <textarea class="form__element form__textarea"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-3 columns"><a href="" class="button button_profile">Сохранить изменения</a></div>
+          </div>
+        </form>
+      </div>
+    </section>
     <footer class="footer">
       <div class="wrapper">
         <div class="row">
-          <div class="large-2 columns"><a href="" class="button button__footer">Стать стилистом</a></div>
+          <div class="large-2 columns"><a href="" class="button button_footer">Стать стилистом</a></div>
           <ul class="footer__nav large-4 columns">
             <li class="footer__nav__item"><a href="">О проекте</a></li>
             <li class="footer__nav__item"><a href="">Помощь</a></li>

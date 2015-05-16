@@ -1,0 +1,43 @@
+.tabs
+	position relative
+
+	&_profile
+		margin-bottom 65px
+
+	&::after
+		content ''
+		display block
+		width 100%
+		border-bottom: 1px solid $clr_separator_grey
+		position absolute
+		bottom 0px
+		z-index 1
+
+	&__item
+		display block
+		float left
+		margin-left 10px
+		text-transform uppercase
+		color $clr_grey_light
+		border 1px solid #efefef
+		padding 9px 20px 4px
+		border-top-left-radius: 3px
+		border-top-right-radius: 3px
+		transition: all 0.15s linear
+		
+		&:hover
+			text-decoration none
+			color $clr_base
+			border-color $clr_separator_grey
+
+		&:first-child
+			margin-left 0
+			clear left
+
+		&.active
+			position relative
+			z-index 2
+			border-color $clr_separator_grey
+			border-bottom-color white
+			color $clr_base
+			font-weight 600
